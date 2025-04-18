@@ -74,38 +74,41 @@ function App() {
         </section>
         <section id="projects" className="mt-16">
           <h2 className="text-2xl font-medium text-gray-800">Projects</h2>
-          <div className="mt-4">
-            {/* Placeholder Project 1 */}
-            <div className="mb-8 p-4 border border-gray-200 rounded">
-              <h3 className="text-lg font-medium text-gray-800">
-                Project Title 1
-              </h3>
-              <p className="mt-2 text-base font-medium text-gray-800">
-                Short description of project 1. Highlighting key features and
-                technologies used.
-              </p>
-              <a
-                href="#"
-                className="mt-2 inline-block text-orange-600 hover:text-orange-800"
-              >
-                View Project &rarr;
-              </a>
+          <div className="mt-4 group/list">
+            <div className="mb-12 group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+              <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-gray-100/20 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
+              <div className="z-10 sm:col-span-6">
+                <h3 className="text-lg font-medium text-gray-800">
+                  Project Title 1
+                </h3>
+                <p className="mt-2 text-base font-medium text-gray-800">
+                  Short description of project 1. Highlighting key features and
+                  technologies used.
+                </p>
+                <a
+                  href="#"
+                  className="mt-2 inline-block text-orange-600 hover:text-orange-800"
+                >
+                  View Project &rarr;
+                </a>
+              </div>
             </div>
-            {/* Placeholder Project 2 */}
-            <div className="mb-8 p-4 border border-gray-200 rounded">
-              <h3 className="text-lg font-medium text-gray-800">
-                Project Title 2
-              </h3>
-              <p className="mt-2 text-base font-medium text-gray-800">
-                Short description of project 2. Focused on different aspects or
-                tech stack.
-              </p>
-              <a
-                href="#"
-                className="mt-2 inline-block text-orange-600 hover:text-orange-800"
-              >
-                View Project &rarr;
-              </a>
+            <div className="mb-12 group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+              <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-gray-100/20 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
+              <div className="z-10 sm:col-span-6">
+                <h3 className="text-lg font-medium text-gray-800">
+                  Project Title 2
+                </h3>
+                <p className="mt-2 text-base font-medium text-gray-800">
+                  Focused on different aspects or tech stack.
+                </p>
+                <a
+                  href="#"
+                  className="mt-2 inline-block text-orange-600 hover:text-orange-800"
+                >
+                  View Project &rarr;
+                </a>
+              </div>
             </div>
           </div>
         </section>
