@@ -39,11 +39,6 @@ export default function BlobFollower() {
           <div className="w-48 h-48 rounded-full bg-orange-300 opacity-40 blur-3xl"></div>
         </div>
       )}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <p className="text-gray-800 text-2xl font-medium z-10">
-          Move your mouse around to see the blob follow
-        </p>
-      </div>
     </div>
   );
 }
