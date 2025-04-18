@@ -5,13 +5,13 @@ import { FaTrophy, FaUser } from "react-icons/fa";
 function App() {
   return (
     <div className="mx-auto min-h-screen max-w-screen-xl font-sans text-black lg:flex lg:justify-between lg:gap-4 relative selection:bg-orange-300 selection:text-orange-900">
-      {/* Place BlobFlower behind other content */}
-      <div className="fixed inset-0 z-0">
+      {/* Place BlobFlower behind other content - Hide on mobile */}
+      <div className="fixed inset-0 z-0 hidden lg:block">
         <BlobFlower />
       </div>
 
-      {/* Left Column (Header/Nav) - Adjusted horizontal padding */}
-      <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[40%] lg:flex-col lg:justify-between py-24 px-24 z-10">
+      {/* Left Column (Header/Nav) - Increased z-index */}
+      <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[40%] lg:flex-col lg:justify-between px-6 py-12 lg:px-24 lg:py-24 z-30">
         <div>
           <h1 className="text-4xl font-medium text-gray-800">
             Marko Tsymbaliuk
@@ -74,9 +74,21 @@ function App() {
         </ul>
       </header>
 
-      {/* Right Column (Main Content) - Adjusted horizontal padding */}
-      <main id="content" className="lg:w-[60%] py-24 px-24 z-10">
-        <section id="about" className="scroll-mt-24">
+      {/* Right Column (Main Content) - Increased z-index */}
+      <main
+        id="content"
+        className="lg:w-[60%] px-6 py-16 lg:px-24 lg:py-24 z-30"
+      >
+        <section
+          id="about"
+          className="mb-8 scroll-mt-16 md:mb-12 lg:mb-16 lg:scroll-mt-24"
+        >
+          {/* Sticky Section Header - Mobile Only */}
+          <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-white/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+            <h2 className="text-sm font-bold uppercase tracking-widest text-gray-800 lg:sr-only">
+              About
+            </h2>
+          </div>
           <p className="text-base font-medium text-gray-800">
             I'm a junior Computer Science student at Gettysburg College, also
             pursuing a minor in Economics. My focus is on creating software
@@ -98,23 +110,30 @@ function App() {
             grounded.
           </p>
         </section>
-        <section id="projects" className="mt-16 scroll-mt-24">
+        <section
+          id="projects"
+          className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
+        >
+          {/* Sticky Section Header - Mobile Only */}
+          <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-white/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+            <h2 className="text-sm font-bold uppercase tracking-widest text-gray-800 lg:sr-only">
+              Projects
+            </h2>
+          </div>
           <div className="mt-4 group/list">
-            {/* CodeCafé Project - Adjusting image/text split */}
-            <a
-              href="https://github.com/mrktsm/codecafe"
-              target="_blank"
-              rel="noreferrer noopener"
-              aria-label="View CodeCafé project on GitHub"
+            {/* CodeCafé Project - Removed outer <a> tag */}
+            <div
+              /* Removed href, target, rel, aria-label */
               className="mb-12 group relative block pb-1 transition-all lg:hover:!opacity-100 lg:group-hover/list:opacity-50"
             >
               {/* Background hover effect div */}
               <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-gray-100/20 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
 
               {/* Inner Grid for Image & Text */}
-              <div className="relative sm:grid sm:grid-cols-8 sm:gap-8 md:gap-4 pointer-events-none">
-                {/* Image Column (Right) - Changed to col-span-4 */}
+              <div className="relative sm:grid sm:grid-cols-8 sm:gap-8 md:gap-4 /* Removed pointer-events-none */">
+                {/* Image Column (Right) */}
                 <div className="sm:order-2 sm:col-span-4 lg:group-hover/list:opacity-100">
+                  {/* Consider adding a link around the image if desired */}
                   <img
                     alt="Adobe Express project screenshot or logo"
                     loading="lazy"
@@ -125,25 +144,34 @@ function App() {
                     className="rounded w-full transition aspect-video object-cover"
                   />
                 </div>
-                {/* Text Column (Left) - Changed to col-span-4 */}
+                {/* Text Column (Left) */}
                 <div className="sm:col-span-4">
-                  {/* Title - Added group-hover text color and group/link for SVG */}
-                  <h3 className="text-lg font-medium text-gray-800 pointer-events-auto group/link group-hover:text-orange-600">
-                    CodeCafé
-                    {/* Changed SVG animation trigger from group-hover/link to group-hover */}
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      className="inline-block h-4 w-4 shrink-0 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 motion-reduce:transition-none ml-1"
-                      aria-hidden="true"
+                  {/* Title - Already a link, removed group/link */}
+                  <h3 className="text-lg font-medium text-gray-800 /* Removed pointer-events-auto */ group-hover:text-orange-600">
+                    {/* Make title the primary link target */}
+                    <a
+                      href="https://github.com/mrktsm/codecafe"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      aria-label="CodeCafé (opens in new tab)"
+                      className="static before:absolute before:inset-0"
                     >
-                      <path
-                        fill-rule="evenodd"
-                        d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                        clip-rule="evenodd"
-                      ></path>
-                    </svg>
+                      CodeCafé
+                      {/* Changed SVG attributes to camelCase */}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        className="inline-block h-4 w-4 shrink-0 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 motion-reduce:transition-none ml-1"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fillRule="evenodd" /* Changed */
+                          d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                          clipRule="evenodd" /* Changed */
+                        ></path>
+                      </svg>
+                    </a>
                   </h3>
                   {/* Description */}
                   <p className="mt-2 text-sm font-medium text-gray-800 select-none">
@@ -155,21 +183,21 @@ function App() {
                     <FaUser className="mr-1 h-4 w-4" aria-hidden="true" />
                     <span className="select-none">6,000+ Users</span>
                   </div>
-                  {/* Learn More Link */}
+                  {/* Learn More Link - Now independent */}
                   <a
                     href="https://github.com/mrktsm/codecafe"
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="mt-3 inline-block text-orange-600 hover:text-orange-800 text-sm font-medium pointer-events-auto"
+                    className="mt-3 inline-block text-orange-600 hover:text-orange-800 text-sm font-medium /* Removed pointer-events-auto */"
                   >
                     Learn More &rarr;
                   </a>
                 </div>
               </div>
 
-              {/* Tags List (Restored full list) */}
+              {/* Tags List */}
               <ul
-                className="relative mt-4 flex flex-wrap pointer-events-none"
+                className="relative mt-4 flex flex-wrap /* Removed pointer-events-none */"
                 aria-label="Technologies used"
               >
                 <li className="mr-1 mt-2">
@@ -213,41 +241,48 @@ function App() {
                   </div>
                 </li>
               </ul>
-            </a>{" "}
-            {/* End of main card link */}
-            {/* Dermafyr Project - Updated links to GitHub repo */}
-            <a
-              href="https://github.com/mrktsm/dermafyr"
-              /* Replaced placeholder link */ target="_blank"
-              rel="noreferrer noopener"
-              aria-label="View Dermafyr project on GitHub"
+            </div>{" "}
+            {/* End of CodeCafé card div */}
+            {/* Dermafyr Project - Removed outer <a> tag */}
+            <div
+              /* Removed href, target, rel, aria-label */
               className="mb-12 group relative block pb-1 transition-all lg:hover:!opacity-100 lg:group-hover/list:opacity-50"
             >
               {/* Background hover effect div */}
               <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-gray-100/20 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
 
               {/* Inner Content Wrapper */}
-              <div className="relative pointer-events-none">
+              <div className="relative /* Removed pointer-events-none */">
                 {/* Text Column */}
                 <div>
-                  {/* Title - Added hover effect, group/link, and arrow SVG */}
-                  <h3 className="text-lg font-medium text-gray-800 pointer-events-auto group/link group-hover:text-orange-600">
-                    Dermafyr
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      className="inline-block h-4 w-4 shrink-0 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 motion-reduce:transition-none ml-1"
-                      aria-hidden="true"
+                  {/* Title - Already a link, removed group/link */}
+                  <h3 className="text-lg font-medium text-gray-800 /* Removed pointer-events-auto */ group-hover:text-orange-600">
+                    {/* Make title the primary link target */}
+                    <a
+                      href="https://github.com/mrktsm/dermafyr"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      aria-label="Dermafyr (opens in new tab)"
+                      className="static before:absolute before:inset-0"
                     >
-                      <path
-                        fill-rule="evenodd"
-                        d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                        clip-rule="evenodd"
-                      ></path>
-                    </svg>
+                      Dermafyr
+                      {/* Changed SVG attributes to camelCase */}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        className="inline-block h-4 w-4 shrink-0 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 motion-reduce:transition-none ml-1"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fillRule="evenodd" /* Changed */
+                          d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                          clipRule="evenodd" /* Changed */
+                        ></path>
+                      </svg>
+                    </a>
                   </h3>
-                  {/* Description - Rewritten */}
+                  {/* Description */}
                   <p className="mt-2 text-sm font-medium text-gray-800 select-none">
                     Get personalized skincare guidance instantly. Dermafyr uses
                     AI to analyze skin conditions via the web or private
@@ -261,21 +296,21 @@ function App() {
                       YCP Hacks Best of Show Winner
                     </span>
                   </div>
-                  {/* Learn More Link - Updated href */}
+                  {/* Learn More Link - Now independent */}
                   <a
                     href="https://github.com/mrktsm/dermafyr"
-                    /* Replaced placeholder link */ target="_blank"
+                    target="_blank"
                     rel="noreferrer noopener"
-                    className="mt-3 inline-block text-orange-600 hover:text-orange-800 text-sm font-medium pointer-events-auto"
+                    className="mt-3 inline-block text-orange-600 hover:text-orange-800 text-sm font-medium /* Removed pointer-events-auto */"
                   >
                     Learn More &rarr;
                   </a>
                 </div>
               </div>
 
-              {/* Tags List (Restored full list) */}
+              {/* Tags List */}
               <ul
-                className="relative mt-4 flex flex-wrap pointer-events-none"
+                className="relative mt-4 flex flex-wrap /* Removed pointer-events-none */"
                 aria-label="Technologies used"
               >
                 <li className="mr-1 mt-2">
@@ -314,8 +349,8 @@ function App() {
                   </div>
                 </li>
               </ul>
-            </a>{" "}
-            {/* End of Dermafyr card link */}
+            </div>{" "}
+            {/* End of Dermafyr card div */}
             {/* Removed Placeholder Project Card */}
           </div>{" "}
           {/* End of group/list */}

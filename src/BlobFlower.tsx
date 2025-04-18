@@ -27,7 +27,7 @@ export default function BlobFollower() {
   }, []);
 
   return (
-    <div className="relative w-full h-screen bg-white overflow-hidden">
+    <div className="relative w-full h-screen overflow-hidden">
       {isLoaded && (
         <div
           className="absolute pointer-events-none transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-out"
