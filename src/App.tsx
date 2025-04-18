@@ -2,7 +2,7 @@ import BlobFlower from "./BlobFlower";
 
 function App() {
   return (
-    <div className="min-h-screen font-sans text-black lg:flex lg:justify-between lg:gap-4 relative">
+    <div className="min-h-screen font-sans text-black lg:flex lg:justify-between lg:gap-4 relative selection:bg-orange-300 selection:text-orange-900">
       {/* Place BlobFlower behind other content */}
       <div className="fixed inset-0 z-0">
         <BlobFlower />
@@ -21,25 +21,28 @@ function App() {
             Building cool things for the web. Passionate about frontend
             development and user experience.
           </p>
-          <nav className="hidden lg:block mt-16">
-            <ul>
+          <nav
+            className="nav hidden lg:block mt-16"
+            aria-label="In-page jump links"
+          >
+            <ul className="w-max">
               <li>
-                <a
-                  href="#about"
-                  className="font-medium text-gray-600 hover:text-gray-900"
-                >
-                  About
+                <a className="group flex items-center py-3" href="#about">
+                  <span className="nav-indicator mr-4 h-px w-8 bg-gray-400 transition-all group-hover:w-16 group-hover:bg-gray-800 group-focus-visible:w-16 group-focus-visible:bg-gray-800 motion-reduce:transition-none"></span>
+                  <span className="nav-text text-xs font-bold uppercase tracking-widest text-gray-500 group-hover:text-gray-800 group-focus-visible:text-gray-800">
+                    About
+                  </span>
                 </a>
               </li>
-              <li className="mt-2">
-                <a
-                  href="#projects"
-                  className="font-medium text-gray-600 hover:text-gray-900"
-                >
-                  Projects
+              <li>
+                <a className="group flex items-center py-3" href="#projects">
+                  <span className="nav-indicator mr-4 h-px w-8 bg-gray-400 transition-all group-hover:w-16 group-hover:bg-gray-800 group-focus-visible:w-16 group-focus-visible:bg-gray-800 motion-reduce:transition-none"></span>
+                  <span className="nav-text text-xs font-bold uppercase tracking-widest text-gray-500 group-hover:text-gray-800 group-focus-visible:text-gray-800">
+                    Projects
+                  </span>
                 </a>
               </li>
-              {/* Add more nav items later */}
+              {/* Add more nav links as needed */}
             </ul>
           </nav>
         </div>
