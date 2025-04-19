@@ -74,14 +74,14 @@ function App() {
         </ul>
       </header>
 
-      {/* Right Column (Main Content) - Increased z-index */}
+      {/* Right Column (Main Content) - Adjusted top padding */}
       <main
         id="content"
-        className="lg:w-[60%] px-6 py-16 lg:px-24 lg:py-24 z-30"
+        className="lg:w-[60%] px-6 pt-12 pb-16 lg:px-24 lg:py-24 z-30"
       >
         <section
           id="about"
-          className="mb-8 scroll-mt-16 md:mb-12 lg:mb-16 lg:scroll-mt-24"
+          className="mb-12 scroll-mt-16 md:mb-12 lg:mb-12 lg:scroll-mt-24"
         >
           {/* Sticky Section Header - Mobile Only */}
           <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-white/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">

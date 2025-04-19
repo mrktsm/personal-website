@@ -36,7 +36,8 @@ export default function BlobFollower() {
             top: `${mousePosition.y}px`,
           }}
         >
-          <div className="w-48 h-48 rounded-full bg-orange-300 opacity-40 blur-3xl"></div>
+          {/* Middle ground: size w-60, color orange-400, opacity 40 */}
+          <div className="w-60 h-60 rounded-full bg-orange-400 opacity-40 blur-3xl"></div>
         </div>
       )}
     </div>
