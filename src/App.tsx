@@ -60,7 +60,7 @@ function App() {
               GitHub
             </a>
           </li>
-          <li>
+          <li className="mr-4">
             <a
               href="https://linkedin.com/in/marko-tsymbaliuk"
               target="_blank"
@@ -109,6 +109,31 @@ function App() {
             sculpting, running, and volunteering, which keep me inspired and
             grounded.
           </p>
+          <div className="mt-12">
+            <a
+              className="inline-flex items-center font-medium leading-tight text-gray-800 group hover:text-orange-600 transition-colors duration-150 ease-in-out"
+              href="#resume-link"
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="View Resume (opens in new tab)"
+            >
+              View Full Resume
+              {/* Slanted arrow SVG */}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                className="ml-1 inline-block h-4 w-4 shrink-0 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 motion-reduce:transition-none"
+                aria-hidden="true"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                  clipRule="evenodd"
+                ></path>
+              </svg>
+            </a>
+          </div>
         </section>
         <section
           id="projects"
