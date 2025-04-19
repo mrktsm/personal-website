@@ -168,7 +168,7 @@ function App() {
           <div className="mt-12">
             <a
               className="inline-flex items-center font-medium leading-tight text-gray-800 group hover:text-orange-600 transition-colors duration-150 ease-in-out"
-              href="#resume-link"
+              href="/marko-tsymbaliuk-resume-remove-phone-number.pdf"
               target="_blank"
               rel="noreferrer noopener"
               aria-label="View Resume (opens in new tab)"
