@@ -47,7 +47,8 @@ export default function BlobFollower() {
     <div className="relative w-full h-screen overflow-hidden">
       {isLoaded && (
         <div
-          className="absolute pointer-events-none transition-transform duration-300 ease-out" // Use transition-transform
+          /* Removed transition classes for instant movement */
+          className="absolute pointer-events-none"
           style={{
             // Apply position using transform for hardware acceleration
             transform: `translate(${position.x}px, ${position.y}px) translate(-50%, -50%)`,

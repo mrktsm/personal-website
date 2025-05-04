@@ -207,7 +207,6 @@ function App() {
                 <div className="sm:order-2 sm:col-span-4 lg:group-hover/list:opacity-100">
                   <img
                     alt="Adobe Express project screenshot or logo"
-                    loading="lazy"
                     width="200"
                     height="48"
                     decoding="async"
