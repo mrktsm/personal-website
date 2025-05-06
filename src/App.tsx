@@ -5,6 +5,9 @@ import { FaTrophy, FaUser, FaStar } from "react-icons/fa";
 function App() {
   const [activeSection, setActiveSection] = useState<string>("");
   const [codeCafeStars, setCodeCafeStars] = useState<string | number>("200+");
+  const [areStarsFetched, setAreStarsFetched] = useState<boolean>(false);
+  const [isCodeCafeImageLoaded, setIsCodeCafeImageLoaded] =
+    useState<boolean>(false);
   const [isLoadingPage, setIsLoadingPage] = useState<boolean>(true);
 
   useEffect(() => {
@@ -57,9 +60,15 @@ function App() {
         console.error("Error fetching CodeCafé stars:", error);
       })
       .finally(() => {
-        setIsLoadingPage(false);
+        setAreStarsFetched(true);
       });
   }, []);
+
+  useEffect(() => {
+    if (areStarsFetched && isCodeCafeImageLoaded) {
+      setIsLoadingPage(false);
+    }
+  }, [areStarsFetched, isCodeCafeImageLoaded]);
 
   return (
     <div
@@ -237,6 +246,7 @@ function App() {
                     height="48"
                     decoding="async"
                     src={adobeExpressScreenshot}
+                    onLoad={() => setIsCodeCafeImageLoaded(true)}
                     className="rounded w-full transition aspect-video object-cover"
                   />
                 </div>
