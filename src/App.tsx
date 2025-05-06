@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import BlobFlower from "./BlobFlower";
 import adobeExpressScreenshot from "./assets/Adobe Express - file.png";
 import { FaTrophy, FaUser, FaStar } from "react-icons/fa";
 
