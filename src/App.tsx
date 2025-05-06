@@ -4,6 +4,7 @@ import { FaTrophy, FaUser, FaStar } from "react-icons/fa";
 
 function App() {
   const [activeSection, setActiveSection] = useState<string>("");
+  const [codeCafeStars, setCodeCafeStars] = useState<string | number>("200+");
 
   useEffect(() => {
     const sections = [
@@ -37,6 +38,23 @@ function App() {
       sections.forEach((section) => observer.unobserve(section));
       observer.disconnect();
     };
+  }, []);
+
+  useEffect(() => {
+    fetch("https://api.github.com/repos/mrktsm/codecafe")
+      .then((response) => response.json())
+      .then((data) => {
+        if (data && typeof data.stargazers_count === "number") {
+          setCodeCafeStars(data.stargazers_count);
+        } else {
+          console.warn(
+            "Could not fetch CodeCafé stars or data format unexpected."
+          );
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching CodeCafé stars:", error);
+      });
   }, []);
 
   return (
@@ -250,7 +268,10 @@ function App() {
                     </div>
                     <div className="ml-4 mt-2 flex items-center text-sm font-medium text-gray-600">
                       <FaStar className="mr-1 h-4 w-4" aria-hidden="true" />
-                      <span className="select-none">200+ Stars</span>
+                      <span className="select-none">
+                        {codeCafeStars}{" "}
+                        {typeof codeCafeStars === "number" ? "Stars" : ""}
+                      </span>
                     </div>
                   </div>
                   <a
