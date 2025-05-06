@@ -42,9 +42,10 @@ function App() {
 
   return (
     <div className="mx-auto min-h-screen max-w-screen-xl font-sans text-black lg:flex lg:justify-between lg:gap-4 relative selection:bg-orange-300 selection:text-orange-900">
-      <div className="fixed inset-0 z-0 hidden lg:block">
+      {/* Place BlobFlower behind other content - Commented out to disable */}
+      {/* <div className="fixed inset-0 z-0 hidden lg:block">
         <BlobFlower />
-      </div>
+      </div> */}
 
       <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[40%] lg:flex-col lg:justify-between px-6 py-12 lg:px-24 lg:py-24 z-30">
         <div>
