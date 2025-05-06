@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import BlobFlower from "./BlobFlower";
 import adobeExpressScreenshot from "./assets/Adobe Express - file.png";
-import { FaTrophy, FaUser } from "react-icons/fa";
+import { FaTrophy, FaUser, FaStar } from "react-icons/fa";
 
 function App() {
   const [activeSection, setActiveSection] = useState<string>("");
@@ -243,9 +243,15 @@ function App() {
                     Real-time collaborative code editor in the browser for
                     seamless pair programming and teaching.
                   </p>
-                  <div className="mt-2 flex items-center text-sm font-medium text-gray-600">
-                    <FaUser className="mr-1 h-4 w-4" aria-hidden="true" />
-                    <span className="select-none">6,000+ Users</span>
+                  <div className="flex items-center">
+                    <div className="mt-2 flex items-center text-sm font-medium text-gray-600">
+                      <FaUser className="mr-1 h-4 w-4" aria-hidden="true" />
+                      <span className="select-none">6,000+ Users</span>
+                    </div>
+                    <div className="ml-4 mt-2 flex items-center text-sm font-medium text-gray-600">
+                      <FaStar className="mr-1 h-4 w-4" aria-hidden="true" />
+                      <span className="select-none">200+ Stars</span>
+                    </div>
                   </div>
                   <a
                     href="https://github.com/mrktsm/codecafe"
