@@ -5,6 +5,7 @@ import { FaTrophy, FaUser, FaStar } from "react-icons/fa";
 function App() {
   const [activeSection, setActiveSection] = useState<string>("");
   const [codeCafeStars, setCodeCafeStars] = useState<string | number>("200+");
+  const [isLoadingPage, setIsLoadingPage] = useState<boolean>(true);
 
   useEffect(() => {
     const sections = [
@@ -54,11 +55,18 @@ function App() {
       })
       .catch((error) => {
         console.error("Error fetching CodeCafé stars:", error);
+      })
+      .finally(() => {
+        setIsLoadingPage(false);
       });
   }, []);
 
   return (
-    <div className="mx-auto min-h-screen max-w-screen-xl font-sans text-black lg:flex lg:justify-between lg:gap-4 relative selection:bg-orange-300 selection:text-orange-900">
+    <div
+      className={`mx-auto min-h-screen max-w-screen-xl font-sans text-black lg:flex lg:justify-between lg:gap-4 relative selection:bg-orange-300 selection:text-orange-900 transition-opacity duration-500 ease-in-out ${
+        isLoadingPage ? "opacity-0" : "opacity-100"
+      }`}
+    >
       {/* Place BlobFlower behind other content - Commented out to disable */}
       {/* <div className="fixed inset-0 z-0 hidden lg:block">
         <BlobFlower />
