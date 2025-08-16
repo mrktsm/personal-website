@@ -237,17 +237,18 @@ function App() {
               <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-gray-100/20 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
 
               <div className="relative sm:grid sm:grid-cols-8 sm:gap-8 md:gap-4">
-                <div className="sm:order-2 sm:col-span-3 lg:group-hover/list:opacity-100">
+                <div className="sm:order-2 sm:col-span-4 lg:group-hover/list:opacity-100">
                   <img
                     alt="DrJava IDE development internship project"
-                    width="200"
-                    height="48"
+                    width="300"
+                    height="200"
                     decoding="async"
                     src={drjavaImage}
-                    className="rounded w-full transition aspect-video object-cover"
+                    className="rounded w-full transition object-contain"
+                    style={{ aspectRatio: "3/2" }}
                   />
                 </div>
-                <div className="sm:col-span-5">
+                <div className="sm:col-span-4">
                   <h3 className="text-lg font-medium text-gray-800 group-hover:text-orange-600">
                     <a
                       href="#"
@@ -273,7 +274,7 @@ function App() {
                     </a>
                   </h3>
                   <p className="mt-1 text-sm font-medium text-gray-600">
-                    Gettysburg College · May 2025 - Aug 2025
+                    Gettysburg College · May - Aug 2025
                   </p>
 
                   <p className="mt-2 text-sm font-medium text-gray-800 select-none">
@@ -322,6 +323,80 @@ function App() {
                 </li>
               </ul>
             </div>
+            <div className="mb-12 group relative block pb-1 transition-all lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+              <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-gray-100/20 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
+
+              <div className="relative">
+                <div>
+                  <h3 className="text-lg font-medium text-gray-800 group-hover:text-orange-600">
+                    <a
+                      href="#"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      aria-label="Computer Science Teaching Assistant (opens in new tab)"
+                      className="static before:absolute before:inset-0"
+                    >
+                      Computer Science Teaching Assistant
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        className="inline-block h-4 w-4 shrink-0 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 motion-reduce:transition-none ml-1"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                          clipRule="evenodd"
+                        ></path>
+                      </svg>
+                    </a>
+                  </h3>
+                  <p className="mt-1 text-sm font-medium text-gray-600">
+                    Gettysburg College · Fall 2023 - Spring 2024
+                  </p>
+
+                  <p className="mt-2 text-sm font-medium text-gray-800 select-none">
+                    Coached 60+ intro-CS students in Python labs and office
+                    hours, leading to 25% improvement in average exam scores.
+                  </p>
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="mt-3 inline-block text-orange-600 hover:text-orange-800 text-sm font-medium"
+                  >
+                    Learn More &rarr;
+                  </a>
+                </div>
+              </div>
+
+              <ul
+                className="relative mt-4 flex flex-wrap"
+                aria-label="Technologies used"
+              >
+                <li className="mr-1 mt-2">
+                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                    Python
+                  </div>
+                </li>
+                <li className="mr-1 mt-2">
+                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                    Teaching
+                  </div>
+                </li>
+                <li className="mr-1 mt-2">
+                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                    OOP
+                  </div>
+                </li>
+                <li className="mr-1 mt-2">
+                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                    Mentoring
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
           <div className="mt-8">
             <a
@@ -362,18 +437,19 @@ function App() {
               <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-gray-100/20 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
 
               <div className="relative sm:grid sm:grid-cols-8 sm:gap-8 md:gap-4">
-                <div className="sm:order-2 sm:col-span-3 lg:group-hover/list:opacity-100">
+                <div className="sm:order-2 sm:col-span-4 lg:group-hover/list:opacity-100">
                   <img
                     alt="Adobe Express project screenshot or logo"
-                    width="200"
-                    height="48"
+                    width="300"
+                    height="200"
                     decoding="async"
                     src={adobeExpressScreenshot}
                     onLoad={() => setIsCodeCafeImageLoaded(true)}
-                    className="rounded w-full transition aspect-video object-cover"
+                    className="rounded w-full transition object-contain"
+                    style={{ aspectRatio: "3/2" }}
                   />
                 </div>
-                <div className="sm:col-span-5">
+                <div className="sm:col-span-4">
                   <h3 className="text-lg font-medium text-gray-800 group-hover:text-orange-600">
                     <a
                       href="https://github.com/mrktsm/codecafe"
