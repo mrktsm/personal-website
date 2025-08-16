@@ -237,7 +237,7 @@ function App() {
               <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-gray-100/20 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
 
               <div className="relative sm:grid sm:grid-cols-8 sm:gap-8 md:gap-4">
-                <div className="sm:order-2 sm:col-span-4 lg:group-hover/list:opacity-100">
+                <div className="sm:order-2 sm:col-span-3 lg:group-hover/list:opacity-100">
                   <img
                     alt="DrJava IDE development internship project"
                     width="200"
@@ -247,7 +247,7 @@ function App() {
                     className="rounded w-full transition aspect-video object-cover"
                   />
                 </div>
-                <div className="sm:col-span-4">
+                <div className="sm:col-span-5">
                   <h3 className="text-lg font-medium text-gray-800 group-hover:text-orange-600">
                     <a
                       href="#"
@@ -273,7 +273,7 @@ function App() {
                     </a>
                   </h3>
                   <p className="mt-1 text-sm font-medium text-gray-600">
-                    Gettysburg College · May 2025 - Present
+                    Gettysburg College · May 2025 - Aug 2025
                   </p>
 
                   <p className="mt-2 text-sm font-medium text-gray-800 select-none">
@@ -298,11 +298,6 @@ function App() {
                 <li className="mr-1 mt-2">
                   <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
                     React
-                  </div>
-                </li>
-                <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
-                    TypeScript
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
@@ -367,7 +362,7 @@ function App() {
               <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-gray-100/20 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
 
               <div className="relative sm:grid sm:grid-cols-8 sm:gap-8 md:gap-4">
-                <div className="sm:order-2 sm:col-span-4 lg:group-hover/list:opacity-100">
+                <div className="sm:order-2 sm:col-span-3 lg:group-hover/list:opacity-100">
                   <img
                     alt="Adobe Express project screenshot or logo"
                     width="200"
@@ -378,7 +373,7 @@ function App() {
                     className="rounded w-full transition aspect-video object-cover"
                   />
                 </div>
-                <div className="sm:col-span-4">
+                <div className="sm:col-span-5">
                   <h3 className="text-lg font-medium text-gray-800 group-hover:text-orange-600">
                     <a
                       href="https://github.com/mrktsm/codecafe"
