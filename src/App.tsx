@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import adobeExpressScreenshot from "./assets/Adobe Express - file.png";
+import drjavaImage from "./assets/drjava.png";
 import { FaTrophy, FaUser, FaStar } from "react-icons/fa";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
   useEffect(() => {
     const sections = [
       document.getElementById("about"),
+      document.getElementById("experience"),
       document.getElementById("projects"),
     ].filter((el) => el !== null) as HTMLElement[];
 
@@ -119,6 +121,26 @@ function App() {
                 </a>
               </li>
               <li>
+                <a className="group flex items-center py-3" href="#experience">
+                  <span
+                    className={`nav-indicator mr-4 h-px transition-all group-hover:w-16 group-hover:bg-gray-800 group-focus-visible:w-16 group-focus-visible:bg-gray-800 motion-reduce:transition-none ${
+                      activeSection === "experience"
+                        ? "w-16 bg-gray-800"
+                        : "w-8 bg-gray-400"
+                    }`}
+                  ></span>
+                  <span
+                    className={`nav-text text-xs font-bold uppercase tracking-widest group-hover:text-gray-800 group-focus-visible:text-gray-800 ${
+                      activeSection === "experience"
+                        ? "text-gray-800"
+                        : "text-gray-500"
+                    }`}
+                  >
+                    Experience
+                  </span>
+                </a>
+              </li>
+              <li>
                 <a className="group flex items-center py-3" href="#projects">
                   <span
                     className={`nav-indicator mr-4 h-px transition-all group-hover:w-16 group-hover:bg-gray-800 group-focus-visible:w-16 group-focus-visible:bg-gray-800 motion-reduce:transition-none ${
@@ -200,7 +222,113 @@ function App() {
             sculpting, running, and volunteering, which keep me inspired and
             grounded.
           </p>
-          <div className="mt-12">
+        </section>
+        <section
+          id="experience"
+          className="mb-8 scroll-mt-16 md:mb-12 lg:mb-16 lg:scroll-mt-24"
+        >
+          <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-white/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+            <h2 className="text-sm font-bold uppercase tracking-widest text-gray-800 lg:sr-only">
+              Experience
+            </h2>
+          </div>
+          <div className="mt-4 group/list">
+            <div className="mb-12 group relative block pb-1 transition-all lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+              <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-gray-100/20 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
+
+              <div className="relative sm:grid sm:grid-cols-8 sm:gap-8 md:gap-4">
+                <div className="sm:order-2 sm:col-span-4 lg:group-hover/list:opacity-100">
+                  <img
+                    alt="DrJava IDE development internship project"
+                    width="200"
+                    height="48"
+                    decoding="async"
+                    src={drjavaImage}
+                    className="rounded w-full transition aspect-video object-cover"
+                  />
+                </div>
+                <div className="sm:col-span-4">
+                  <h3 className="text-lg font-medium text-gray-800 group-hover:text-orange-600">
+                    <a
+                      href="#"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      aria-label="Software Engineering Intern (opens in new tab)"
+                      className="static before:absolute before:inset-0"
+                    >
+                      Software Engineering Intern
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        className="inline-block h-4 w-4 shrink-0 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 motion-reduce:transition-none ml-1"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                          clipRule="evenodd"
+                        ></path>
+                      </svg>
+                    </a>
+                  </h3>
+                  <p className="mt-1 text-sm font-medium text-gray-600">
+                    Gettysburg College · May 2025 - Present
+                  </p>
+
+                  <p className="mt-2 text-sm font-medium text-gray-800 select-none">
+                    Building AI-powered coding tutors and educational tools for
+                    computer science students at Gettysburg College.
+                  </p>
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="mt-3 inline-block text-orange-600 hover:text-orange-800 text-sm font-medium"
+                  >
+                    Learn More &rarr;
+                  </a>
+                </div>
+              </div>
+
+              <ul
+                className="relative mt-4 flex flex-wrap"
+                aria-label="Technologies used"
+              >
+                <li className="mr-1 mt-2">
+                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                    React
+                  </div>
+                </li>
+                <li className="mr-1 mt-2">
+                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                    TypeScript
+                  </div>
+                </li>
+                <li className="mr-1 mt-2">
+                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                    AI/ML
+                  </div>
+                </li>
+                <li className="mr-1 mt-2">
+                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                    gRPC
+                  </div>
+                </li>
+                <li className="mr-1 mt-2">
+                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                    Java
+                  </div>
+                </li>
+                <li className="mr-1 mt-2">
+                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                    Model Context Protocol
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="mt-8">
             <a
               className="inline-flex items-center font-medium leading-tight text-gray-800 group hover:text-orange-600 transition-colors duration-150 ease-in-out"
               href="/marko-tsymbaliuk-resume-remove-phone-number.pdf"
