@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import adobeExpressScreenshot from "./assets/Adobe Express - file.png";
-import drjavaImage from "./assets/drjava.png";
+import drjavaImage from "./assets/drjava-editor.png";
 import { FaTrophy, FaUser, FaStar } from "react-icons/fa";
 
 function App() {
@@ -237,7 +237,7 @@ function App() {
               <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-gray-100/20 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
 
               <div className="relative sm:grid sm:grid-cols-8 sm:gap-8 md:gap-4">
-                <div className="sm:order-2 sm:col-span-4 lg:group-hover/list:opacity-100">
+                <div className="sm:order-2 sm:col-span-3 lg:group-hover/list:opacity-100 pt-2">
                   <img
                     alt="DrJava IDE development internship project"
                     width="300"
@@ -248,7 +248,7 @@ function App() {
                     style={{ aspectRatio: "3/2" }}
                   />
                 </div>
-                <div className="sm:col-span-4">
+                <div className="sm:col-span-5">
                   <h3 className="text-lg font-medium text-gray-800 group-hover:text-orange-600">
                     <a
                       href="#"
@@ -274,7 +274,7 @@ function App() {
                     </a>
                   </h3>
                   <p className="mt-1 text-sm font-medium text-gray-600">
-                    Gettysburg College · May - Aug 2025
+                    Gettysburg College · May 2025 - Aug 2025
                   </p>
 
                   <p className="mt-2 text-sm font-medium text-gray-800 select-none">
