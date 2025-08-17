@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import adobeExpressScreenshot from "./assets/codecafe-outline.png";
-import drjavaImage from "./assets/drjava-outline.png";
+import adobeExpressScreenshot from "./assets/codecafe-light.png";
+import drjavaImage from "./assets/drjava-light.png";
 import { FaTrophy, FaUser, FaStar } from "react-icons/fa";
 // import BlobFlower from "./BlobFlower";
 
@@ -87,7 +87,7 @@ function App() {
 
       <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[40%] lg:flex-col lg:justify-between px-6 py-12 lg:px-24 lg:py-24 z-30">
         <div>
-          <h1 className="text-4xl font-medium text-gray-800">
+          <h1 className="text-4xl font-medium text-gray-800 whitespace-nowrap">
             Marko Tsymbaliuk
           </h1>
           <h2 className="mt-3 text-xl font-medium text-gray-800">
@@ -259,7 +259,7 @@ function App() {
               <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block border border-orange-100/0 lg:group-hover:bg-orange-50/30 lg:group-hover:shadow-lg lg:group-hover:border-orange-100"></div>
 
               <div className="relative sm:grid sm:grid-cols-8 sm:gap-8 md:gap-4">
-                <div className="sm:order-2 sm:col-span-3 lg:group-hover/list:opacity-100 pt-2">
+                <div className="sm:order-2 sm:col-span-2 lg:group-hover/list:opacity-100 pt-2">
                   <img
                     alt="DrJava IDE development internship project"
                     width="300"
@@ -270,7 +270,7 @@ function App() {
                     style={{ aspectRatio: "3/2" }}
                   />
                 </div>
-                <div className="sm:col-span-5">
+                <div className="sm:col-span-6">
                   <h3 className="text-lg font-medium text-gray-800 group-hover:text-orange-600">
                     <a
                       href="#"
@@ -545,7 +545,7 @@ function App() {
               <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block border border-orange-100/0 lg:group-hover:bg-orange-50/30 lg:group-hover:shadow-lg lg:group-hover:border-orange-100"></div>
 
               <div className="relative sm:grid sm:grid-cols-8 sm:gap-8 md:gap-4">
-                <div className="sm:order-2 sm:col-span-4 lg:group-hover/list:opacity-100">
+                <div className="sm:order-2 sm:col-span-3 lg:group-hover/list:opacity-100">
                   <img
                     alt="Adobe Express project screenshot or logo"
                     width="300"
@@ -557,7 +557,7 @@ function App() {
                     style={{ aspectRatio: "3/2" }}
                   />
                 </div>
-                <div className="sm:col-span-4">
+                <div className="sm:col-span-5">
                   <h3 className="text-lg font-medium text-gray-800 group-hover:text-orange-600">
                     <a
                       href="https://github.com/mrktsm/codecafe"
