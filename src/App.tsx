@@ -259,14 +259,14 @@ function App() {
               <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block border border-orange-100/0 lg:group-hover:bg-orange-50/30 lg:group-hover:shadow-lg lg:group-hover:border-orange-100"></div>
 
               <div className="relative sm:grid sm:grid-cols-8 sm:gap-8 md:gap-4">
-                <div className="sm:order-2 sm:col-span-2 lg:group-hover/list:opacity-100 pt-2">
+                <div className="mb-4 sm:mb-0 sm:order-2 sm:col-span-2 lg:group-hover/list:opacity-100 pt-2">
                   <img
                     alt="DrJava IDE development internship project"
                     width="300"
                     height="200"
                     decoding="async"
                     src={drjavaImage}
-                    className="rounded w-full transition object-contain"
+                    className="rounded w-32 sm:w-full transition object-contain"
                     style={{ aspectRatio: "3/2" }}
                   />
                 </div>
@@ -545,7 +545,7 @@ function App() {
               <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block border border-orange-100/0 lg:group-hover:bg-orange-50/30 lg:group-hover:shadow-lg lg:group-hover:border-orange-100"></div>
 
               <div className="relative sm:grid sm:grid-cols-8 sm:gap-8 md:gap-4">
-                <div className="sm:order-2 sm:col-span-3 lg:group-hover/list:opacity-100">
+                <div className="mb-4 sm:mb-0 sm:order-2 sm:col-span-3 lg:group-hover/list:opacity-100">
                   <img
                     alt="Adobe Express project screenshot or logo"
                     width="300"
@@ -553,7 +553,7 @@ function App() {
                     decoding="async"
                     src={adobeExpressScreenshot}
                     onLoad={() => setIsCodeCafeImageLoaded(true)}
-                    className="rounded w-full transition object-contain"
+                    className="rounded w-48 sm:w-full transition object-contain"
                     style={{ aspectRatio: "3/2" }}
                   />
                 </div>
@@ -663,13 +663,13 @@ function App() {
                 <div>
                   <h3 className="text-lg font-medium text-gray-800 group-hover:text-orange-600">
                     <a
-                      href="https://github.com/mrktsm/dermafyr"
+                      href="https://github.com/mrktsm/redis-in-go"
                       target="_blank"
                       rel="noreferrer noopener"
-                      aria-label="Dermafyr (opens in new tab)"
+                      aria-label="Gedis (opens in new tab)"
                       className="static before:absolute before:inset-0"
                     >
-                      Dermafyr
+                      Gedis
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 20 20"
@@ -686,19 +686,12 @@ function App() {
                     </a>
                   </h3>
                   <p className="mt-2 text-sm font-medium text-gray-800 select-none">
-                    Get personalized skincare guidance instantly. Dermafyr uses
-                    AI to analyze skin conditions via the web or private
-                    in-store kiosks, recommending routines and products to help
-                    bridge the accessibility gap in dermatological care.
+                    High-performance Redis implementation built from scratch in
+                    Go with 10k+ concurrent connections and sub-millisecond
+                    response times.
                   </p>
-                  <div className="mt-2 flex items-center text-sm font-medium text-gray-600">
-                    <FaTrophy className="mr-1 h-4 w-4" aria-hidden="true" />
-                    <span className="select-none">
-                      YCP Hacks Best of Show Winner
-                    </span>
-                  </div>
                   <a
-                    href="https://github.com/mrktsm/dermafyr"
+                    href="https://github.com/mrktsm/redis-in-go"
                     target="_blank"
                     rel="noreferrer noopener"
                     className="mt-3 inline-block text-orange-600 hover:text-orange-800 text-sm font-medium"
@@ -714,37 +707,32 @@ function App() {
               >
                 <li className="mr-1 mt-2">
                   <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
-                    React
+                    Go
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
                   <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
-                    Electron
+                    TCP Sockets
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
                   <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
-                    FastAPI
+                    B-trees
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
                   <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
-                    TensorFlow
+                    Concurrency
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
                   <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
-                    Gemini API
+                    Database Design
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
                   <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
-                    Llama
-                  </div>
-                </li>
-                <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
-                    Raspberry Pi
+                    TCP Sockets
                   </div>
                 </li>
               </ul>
