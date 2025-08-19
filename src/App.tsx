@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import adobeExpressScreenshot from "./assets/codecafe-light.png";
 import drjavaImage from "./assets/drjava-light.png";
-import { FaTrophy, FaUser, FaStar } from "react-icons/fa";
+import { FaUser, FaStar } from "react-icons/fa";
 // import BlobFlower from "./BlobFlower";
 
 function App() {
