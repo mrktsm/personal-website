@@ -6,11 +6,23 @@ import { FaUser, FaStar } from "react-icons/fa";
 
 function App() {
   const [activeSection, setActiveSection] = useState<string>("about");
+  const [isNearBottom, setIsNearBottom] = useState<boolean>(false);
   const [codeCafeStars, setCodeCafeStars] = useState<string | number>("200+");
   const [areStarsFetched, setAreStarsFetched] = useState<boolean>(false);
   const [isCodeCafeImageLoaded, setIsCodeCafeImageLoaded] =
     useState<boolean>(false);
   const [isLoadingPage, setIsLoadingPage] = useState<boolean>(true);
+
+  const handleOpenSourceClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const section = document.getElementById("opensource");
+    if (section) {
+      const rect = section.getBoundingClientRect();
+      const sectionMiddle = rect.top + rect.height / 2;
+      const scrollTop = window.scrollY + sectionMiddle - window.innerHeight / 2;
+      window.scrollTo({ top: scrollTop, behavior: "smooth" });
+    }
+  };
 
   useEffect(() => {
     const sections = [
@@ -24,16 +36,36 @@ function App() {
 
     const observerOptions = {
       root: null,
-      rootMargin: "0px 0px -80% 0px",
-      threshold: 0,
+      rootMargin: "-40% 0px -40% 0px", // Detect when section is in middle 20% of viewport
+      threshold: 0.1,
     };
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      if (isNearBottom) return; // Don't override when near bottom
+
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setActiveSection(entry.target.id);
         }
       });
+    };
+
+    // Handle top and bottom edge cases, let intersection observer handle middle sections
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const documentHeight = document.documentElement.scrollHeight;
+      const windowHeight = window.innerHeight;
+      const scrollPercent = scrollTop / (documentHeight - windowHeight);
+
+      const nearTop = scrollTop < 100;
+      const nearBottom = scrollPercent > 0.95;
+      setIsNearBottom(nearBottom || nearTop);
+
+      if (nearTop) {
+        setActiveSection("about");
+      } else if (nearBottom) {
+        setActiveSection("projects");
+      }
     };
 
     const observer = new IntersectionObserver(
@@ -42,11 +74,14 @@ function App() {
     );
     sections.forEach((section) => observer.observe(section));
 
+    window.addEventListener("scroll", handleScroll);
+
     return () => {
       sections.forEach((section) => observer.unobserve(section));
       observer.disconnect();
+      window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [isNearBottom]);
 
   useEffect(() => {
     fetch("https://api.github.com/repos/mrktsm/codecafe")
@@ -143,7 +178,11 @@ function App() {
                 </a>
               </li>
               <li>
-                <a className="group flex items-center py-3" href="#opensource">
+                <a
+                  className="group flex items-center py-3"
+                  href="#opensource"
+                  onClick={handleOpenSourceClick}
+                >
                   <span
                     className={`nav-indicator mr-4 h-px transition-all group-hover:w-16 group-hover:bg-gray-800 group-focus-visible:w-16 group-focus-visible:bg-gray-800 motion-reduce:transition-none ${
                       activeSection === "opensource"
