@@ -43,6 +43,9 @@ function App() {
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
       if (isNearBottom) return; // Don't override when near bottom
 
+      // Prevent observer from overriding initial state immediately on page load
+      if (window.scrollY === 0) return;
+
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setActiveSection(entry.target.id);
@@ -312,7 +315,7 @@ function App() {
                 <div className="sm:col-span-6">
                   <h3 className="text-lg font-medium text-gray-800 group-hover:text-orange-600">
                     <a
-                      href="#"
+                      href="https://www.gettysburg.edu"
                       target="_blank"
                       rel="noreferrer noopener"
                       aria-label="Software Engineering Intern (opens in new tab)"
@@ -343,7 +346,7 @@ function App() {
                     computer science students at Gettysburg College.
                   </p>
                   <a
-                    href="#"
+                    href="https://www.gettysburg.edu"
                     target="_blank"
                     rel="noreferrer noopener"
                     className="mt-3 inline-block text-orange-600 hover:text-orange-800 text-sm font-medium"
@@ -391,7 +394,7 @@ function App() {
                 <div>
                   <h3 className="text-lg font-medium text-gray-800 group-hover:text-orange-600">
                     <a
-                      href="#"
+                      href="https://www.gettysburg.edu"
                       target="_blank"
                       rel="noreferrer noopener"
                       aria-label="Computer Science Teaching Assistant (opens in new tab)"
@@ -422,7 +425,7 @@ function App() {
                     hours, leading to 25% improvement in average exam scores.
                   </p>
                   <a
-                    href="#"
+                    href="https://www.gettysburg.edu"
                     target="_blank"
                     rel="noreferrer noopener"
                     className="mt-3 inline-block text-orange-600 hover:text-orange-800 text-sm font-medium"
