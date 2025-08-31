@@ -315,7 +315,7 @@ function App() {
                 <div className="sm:col-span-6">
                   <h3 className="text-lg font-medium text-gray-800 group-hover:text-orange-600">
                     <a
-                      href="https://www.gettysburg.edu"
+                      href="https://youtu.be/4BScIcCiIsk?si=bSI10vTd4O4H_0J-"
                       target="_blank"
                       rel="noreferrer noopener"
                       aria-label="Software Engineering Intern (opens in new tab)"
