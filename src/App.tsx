@@ -372,7 +372,7 @@ function App() {
                 </li>
                 <li className="mr-1 mt-2">
                   <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
-                    gRPC
+                    Java Swing
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
@@ -383,6 +383,11 @@ function App() {
                 <li className="mr-1 mt-2">
                   <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
                     Model Context Protocol
+                  </div>
+                </li>
+                <li className="mr-1 mt-2">
+                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                    SSE
                   </div>
                 </li>
               </ul>
