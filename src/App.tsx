@@ -132,8 +132,8 @@ function App() {
             Software Engineer
           </h2>
           <p className="mt-4 max-w-xs text-base font-medium text-gray-800">
-            Building cool things for the web. Focusing on full stack development
-            and creating great software.
+            I love event-driven software and building things that scale.
+            Real-time systems are my jam.
           </p>
           <nav
             className="nav hidden lg:block mt-16"
@@ -268,23 +268,20 @@ function App() {
           </div>
           <p className="text-base font-medium text-gray-800">
             I'm a junior Computer Science student at Gettysburg College, also
-            pursuing a minor in Economics. My focus is on creating software
-            that's not just functional, but meaningful and easy to use—whether
-            it's building smarter tools for digital organization or helping
-            people learn more efficiently.
+            pursuing a minor in Economics. I love working with distributed
+            systems and building live, event-driven software with full-stack
+            development.
           </p>
           <p className="mt-4 text-base font-medium text-gray-800">
-            I'm particularly drawn to the intersection of user experience and
-            intelligent systems, driven by a curiosity to design intuitive
-            applications that solve real problems and improve how we interact
-            with technology. As a student from Ukraine, I bring a unique
-            perspective to my work and believe in technology's potential for
-            positive impact.
+            I'm drawn to creating software that's not just functional, but
+            meaningful and intuitive. Whether it's building tools for real-time
+            collaboration or contributing to database systems, I enjoy solving
+            problems that improve how people interact with technology.
           </p>
           <p className="mt-4 text-base font-medium text-gray-800">
-            Outside of coding, I find creative outlets in 3D modeling,
-            sculpting, running, and volunteering, which keep me inspired and
-            grounded.
+            As a student from Ukraine, I bring a unique perspective to my work
+            and believe in technology's potential for positive impact. When I'm
+            not coding, I stay active and enjoy giving back to my community.
           </p>
         </section>
         <section
