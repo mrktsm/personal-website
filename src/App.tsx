@@ -3,7 +3,7 @@ import adobeExpressScreenshot from "./assets/codecafe-light.png";
 import wikiracingDesktopScreenshot from "./assets/wikiracing-desktop.png";
 import wikiracingMobileScreenshot from "./assets/wikiracing-mobile.png";
 import drjavaImage from "./assets/drjava-light.png";
-import { FaUser, FaStar } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
 // import BlobFlower from "./BlobFlower";
 
 function App() {
@@ -441,10 +441,6 @@ function App() {
                   </p>
                   <div className="flex items-center">
                     <div className="mt-2 flex items-center text-sm font-medium text-gray-600">
-                      <FaUser className="mr-1 h-4 w-4" aria-hidden="true" />
-                      <span className="select-none">6,000+ Users</span>
-                    </div>
-                    <div className="ml-4 mt-2 flex items-center text-sm font-medium text-gray-600">
                       <FaStar className="mr-1 h-4 w-4" aria-hidden="true" />
                       <span className="select-none">
                         {codeCafeStars}{" "}
@@ -906,8 +902,8 @@ function App() {
                   </p>
 
                   <p className="mt-2 text-sm font-medium text-gray-800 select-none">
-                    Coached 60+ intro-CS students in Python labs and office
-                    hours, leading to 25% improvement in average exam scores.
+                    Coached 60+ intro-CS students through Python labs and office
+                    hours.
                   </p>
                 </div>
               </div>
