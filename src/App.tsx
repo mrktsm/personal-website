@@ -269,21 +269,22 @@ function App() {
             </h2>
           </div>
           <p className="text-base font-medium text-gray-800">
-            I'm a junior Computer Science student at Gettysburg College, also
-            pursuing a minor in Economics. I love working with distributed
-            systems and building live, event-driven software with full-stack
-            development.
+            I’m a Computer Science student at Gettysburg College, graduating in December 2026 with a minor in Economics. My work is mostly focused on backend engineering, full-stack development, and real-time systems.
           </p>
           <p className="mt-4 text-base font-medium text-gray-800">
-            I'm drawn to creating software that's not just functional, but
-            meaningful and intuitive. Whether it's building tools for real-time
-            collaboration or contributing to database systems, I enjoy solving
-            problems that improve how people interact with technology.
+            I started by building tools for learning and collaboration, including CS education tools during my software engineering internship at Gettysburg College. That led me toward more technically challenging systems, especially software where multiple users interact with the same state in real time.
           </p>
           <p className="mt-4 text-base font-medium text-gray-800">
-            As a student from Ukraine, I bring a unique perspective to my work
-            and believe in technology's potential for positive impact. When I'm
-            not coding, I stay active and enjoy giving back to my community.
+            My largest project is CodeCafé, a browser-based collaborative code editor with live preview and real-time multi-user editing. I built the core Operational Transformation engine myself using Java, Spring Boot, WebSockets, Redis, and Lua scripts. The project reached 500+ GitHub stars and appeared on the Hacker News front page.
+          </p>
+          <p className="mt-4 text-base font-medium text-gray-800">
+            That experience pushed me deeper into distributed systems and open source. I later contributed to Apache Cassandra, one of the most widely used distributed databases, with a merged contribution to its configuration system.
+          </p>
+          <p className="mt-4 text-base font-medium text-gray-800">
+            I also worked as a Software Engineer at Poozle, where I built recommendation features on top of a vector database. More recently, I’ve been building wikiracing.org, a real-time Wikipedia racing platform with matchmaking, live cursors, leaderboards, mobile support, and PWA support.
+          </p>
+          <p className="mt-4 text-base font-medium text-gray-800">
+            I like building software that is technically interesting, but still easy for people to try, understand, and use.
           </p>
         </section>
         <section
