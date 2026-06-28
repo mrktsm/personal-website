@@ -938,7 +938,7 @@ function App() {
           <div className="mt-8">
             <a
               className="inline-flex items-center font-medium leading-tight text-gray-800 group hover:text-orange-600 transition-colors duration-150 ease-in-out"
-              href="/Software_Engineer_Resume_Updated_GPA_Web.pdf"
+              href="/Marko_Tsymbaliuk_Resume.pdf"
               target="_blank"
               rel="noreferrer noopener"
               aria-label="View Resume (opens in new tab)"
