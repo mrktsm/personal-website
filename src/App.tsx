@@ -134,8 +134,7 @@ function App() {
             Software Engineer
           </h2>
           <p className="mt-4 max-w-xs text-base font-medium text-gray-800">
-            I love event-driven software and building things that scale.
-            Real-time systems are my jam.
+            Computer Science student building backend, full-stack, and real-time systems.
           </p>
           <nav
             className="nav hidden lg:block mt-16"
@@ -269,16 +268,16 @@ function App() {
             </h2>
           </div>
           <p className="text-base font-medium text-gray-800">
-            I’m a Computer Science student at Gettysburg College, graduating in December 2026. My work is mostly focused on backend engineering, full-stack development, and real-time systems.
+            I’m a Computer Science student at <a href="https://www.gettysburg.edu/" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">Gettysburg College</a>, graduating in December 2026. My work is mostly focused on backend engineering, full-stack development, and real-time systems.
           </p>
           <p className="mt-4 text-base font-medium text-gray-800">
-            My largest project is CodeCafé, a collaborative cloud IDE with live preview, real-time multi-user editing, and 500+ GitHub stars. I built its core Operational Transformation engine in Java with WebSockets and Redis, which pushed me deeper into distributed systems and open source.
+            My largest project is <a href="https://github.com/mrktsm/codecafe" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">CodeCafé</a>, a collaborative cloud IDE with live preview, real-time multi-user editing, and 500+ GitHub stars. I built its core Operational Transformation engine in Java with WebSockets and Redis, which pushed me deeper into distributed systems and open source.
           </p>
           <p className="mt-4 text-base font-medium text-gray-800">
-            Since then, I’ve contributed to Apache Cassandra and worked as a Software Engineer at Poozle, where I built recommendation features on top of a vector database.
+            Since then, I’ve contributed to <a href="https://github.com/apache/cassandra/commit/b26e33d50698f080f801983e34c883a82082b26d" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">Apache Cassandra</a> and worked as a Software Engineer at <a href="https://www.youtube.com/watch?v=K9llFoodPjI" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">Poozle</a>, where I built recommendation features on top of a vector database.
           </p>
           <p className="mt-4 text-base font-medium text-gray-800">
-            More recently, I’ve been building wikiracing.org, a real-time Wikipedia racing platform where players race from one article to another using only Wikipedia links. It includes matchmaking, live cursors, leaderboards, mobile support, and PWA support.
+            More recently, I’ve been building <a href="https://wikiracing.org" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">wikiracing.org</a>, a real-time Wikipedia racing platform where players race from one article to another using only Wikipedia links. It includes matchmaking, live cursors, leaderboards, mobile support, and PWA support.
           </p>
         </section>
         <section
@@ -632,7 +631,7 @@ function App() {
                 <div>
                   <h3 className="text-lg font-medium text-gray-800 group-hover:text-orange-600">
                     <a
-                      href="https://github.com/apache/cassandra/pulls?q=is%3Apr+author%3Amrktsm"
+                      href="https://github.com/apache/cassandra/commit/b26e33d50698f080f801983e34c883a82082b26d"
                       target="_blank"
                       rel="noreferrer noopener"
                       aria-label="Apache Cassandra Open Source Contributions (opens in new tab)"
