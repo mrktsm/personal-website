@@ -269,22 +269,16 @@ function App() {
             </h2>
           </div>
           <p className="text-base font-medium text-gray-800">
-            I’m a Computer Science student at Gettysburg College, graduating in December 2026 with a minor in Economics. My work is mostly focused on backend engineering, full-stack development, and real-time systems.
+            I’m a Computer Science student at Gettysburg College, graduating in December 2026. My work is mostly focused on backend engineering, full-stack development, and real-time systems.
           </p>
           <p className="mt-4 text-base font-medium text-gray-800">
-            My strongest work has been around real-time collaboration and backend systems, especially projects where multiple users interact with the same shared state.
+            My largest project is CodeCafé, a collaborative cloud IDE with live preview, real-time multi-user editing, and 500+ GitHub stars. I built its core Operational Transformation engine in Java with WebSockets and Redis, which pushed me deeper into distributed systems and open source.
           </p>
           <p className="mt-4 text-base font-medium text-gray-800">
-            My largest project is CodeCafé, a browser-based collaborative code editor with live preview and real-time multi-user editing. I built the core Operational Transformation engine myself using Java, Spring Boot, WebSockets, Redis, and Lua scripts. The project reached 500+ GitHub stars and appeared on the Hacker News front page.
+            Since then, I’ve contributed to Apache Cassandra and worked as a Software Engineer at Poozle, where I built recommendation features on top of a vector database.
           </p>
           <p className="mt-4 text-base font-medium text-gray-800">
-            That experience pushed me deeper into distributed systems and open source. I later contributed to Apache Cassandra, one of the most widely used distributed databases, with a merged contribution to its configuration system.
-          </p>
-          <p className="mt-4 text-base font-medium text-gray-800">
-            I also worked as a Software Engineer at Poozle, where I built recommendation features on top of a vector database. More recently, I’ve been building wikiracing.org, a real-time Wikipedia racing platform where players race from one article to another using only Wikipedia links, with matchmaking, live cursors, leaderboards, mobile support, and PWA support.
-          </p>
-          <p className="mt-4 text-base font-medium text-gray-800">
-            I like building software that is technically interesting, but still easy for people to try, understand, and use.
+            More recently, I’ve been building wikiracing.org, a real-time Wikipedia racing platform where players race from one article to another using only Wikipedia links. It includes matchmaking, live cursors, leaderboards, mobile support, and PWA support.
           </p>
         </section>
         <section
