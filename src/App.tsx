@@ -11,6 +11,10 @@ function App() {
   const [isNearBottom, setIsNearBottom] = useState<boolean>(false);
   const [codeCafeStars, setCodeCafeStars] = useState<string | number>("200+");
   const [areStarsFetched, setAreStarsFetched] = useState<boolean>(false);
+  const [wikiRacingGames, setWikiRacingGames] = useState<string | number>(
+    "35,000+",
+  );
+  const [areGamesFetched, setAreGamesFetched] = useState<boolean>(false);
   const [isCodeCafeImageLoaded, setIsCodeCafeImageLoaded] =
     useState<boolean>(false);
   const [isLoadingPage, setIsLoadingPage] = useState<boolean>(true);
@@ -109,10 +113,35 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (areStarsFetched && isCodeCafeImageLoaded) {
+    // The count is public and cached server side, so no key and no Supabase
+    // client here. The timeout is what keeps a hung request from holding the
+    // page reveal below, since that waits on this.
+    fetch("https://api.wikiracing.org/api/stats", {
+      signal: AbortSignal.timeout(5000),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data && typeof data.gamesPlayed === "number") {
+          setWikiRacingGames(data.gamesPlayed);
+        } else {
+          console.warn(
+            "Could not fetch wikiracing.org games or data format unexpected.",
+          );
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching wikiracing.org games:", error);
+      })
+      .finally(() => {
+        setAreGamesFetched(true);
+      });
+  }, []);
+
+  useEffect(() => {
+    if (areStarsFetched && areGamesFetched && isCodeCafeImageLoaded) {
       setIsLoadingPage(false);
     }
-  }, [areStarsFetched, isCodeCafeImageLoaded]);
+  }, [areStarsFetched, areGamesFetched, isCodeCafeImageLoaded]);
 
   return (
     <div
@@ -349,6 +378,16 @@ function App() {
                     solo practice, profiles, stats, leaderboards, and mobile
                     support.
                   </p>
+                  <div className="flex items-center">
+                    <div className="mt-2 flex items-center text-sm font-medium text-gray-600">
+                      <span className="select-none">
+                        {typeof wikiRacingGames === "number"
+                          ? wikiRacingGames.toLocaleString()
+                          : wikiRacingGames}{" "}
+                        Games Played
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
