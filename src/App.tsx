@@ -417,7 +417,7 @@ function App() {
                 </li>
                 <li className="mr-1 mt-2">
                   <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
-                    Supabase
+                    PostgreSQL
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
