@@ -322,7 +322,7 @@ function App() {
             <div className="mb-12 group relative block pb-1 transition-all lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
               <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block border border-orange-100/0 lg:group-hover:bg-orange-50/30 lg:group-hover:shadow-lg lg:group-hover:border-orange-100"></div>
 
-              <div className="relative sm:grid sm:grid-cols-8 sm:gap-8 md:gap-4">
+              <div className="isolate sm:grid sm:grid-cols-8 sm:gap-8 md:gap-4">
                 <div className="mb-4 flex min-h-[7.5rem] items-center justify-start sm:mb-0 sm:order-2 sm:col-span-3 sm:justify-center lg:group-hover/list:opacity-100">
                   <div
                     className="relative w-44 overflow-visible transition"
@@ -392,7 +392,7 @@ function App() {
               </div>
 
               <ul
-                className="relative mt-4 flex flex-wrap"
+                className="pointer-events-none relative mt-4 flex flex-wrap"
                 aria-label="Technologies used"
               >
                 <li className="mr-1 mt-2">
@@ -430,17 +430,12 @@ function App() {
                     Matchmaking
                   </div>
                 </li>
-                <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
-                    Real-time UX
-                  </div>
-                </li>
               </ul>
             </div>
             <div className="mb-12 group relative block pb-1 transition-all lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
               <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block border border-orange-100/0 lg:group-hover:bg-orange-50/30 lg:group-hover:shadow-lg lg:group-hover:border-orange-100"></div>
 
-              <div className="relative sm:grid sm:grid-cols-8 sm:gap-8 md:gap-4">
+              <div className="isolate sm:grid sm:grid-cols-8 sm:gap-8 md:gap-4">
                 <div className="mb-4 flex min-h-[7.5rem] items-center justify-start sm:mb-0 sm:order-2 sm:col-span-3 sm:justify-center lg:group-hover/list:opacity-100">
                   <img
                     alt="Adobe Express project screenshot or logo"
@@ -495,7 +490,7 @@ function App() {
               </div>
 
               <ul
-                className="relative mt-4 flex flex-wrap"
+                className="pointer-events-none relative mt-4 flex flex-wrap"
                 aria-label="Technologies used"
               >
                 <li className="mr-1 mt-2">
@@ -567,7 +562,7 @@ function App() {
             <div className="mb-12 group relative block pb-1 transition-all lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
               <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block border border-orange-100/0 lg:group-hover:bg-orange-50/30 lg:group-hover:shadow-lg lg:group-hover:border-orange-100"></div>
 
-              <div className="relative">
+              <div className="isolate">
                 <div>
                   <h3 className="text-lg font-medium text-gray-800 group-hover:text-orange-600">
                     <a
@@ -602,7 +597,7 @@ function App() {
               </div>
 
               <ul
-                className="relative mt-4 flex flex-wrap"
+                className="pointer-events-none relative mt-4 flex flex-wrap"
                 aria-label="Technologies used"
               >
                 <li className="mr-1 mt-2">
@@ -676,7 +671,7 @@ function App() {
             <div className="mb-12 group relative block pb-1 transition-all lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
               <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block border border-orange-100/0 lg:group-hover:bg-orange-50/30 lg:group-hover:shadow-lg lg:group-hover:border-orange-100"></div>
 
-              <div className="relative">
+              <div className="isolate">
                 <div>
                   <h3 className="text-lg font-medium text-gray-800 group-hover:text-orange-600">
                     <a
@@ -714,7 +709,7 @@ function App() {
               </div>
 
               <ul
-                className="relative mt-4 flex flex-wrap"
+                className="pointer-events-none relative mt-4 flex flex-wrap"
                 aria-label="Technologies used"
               >
                 <li className="mr-1 mt-2">
@@ -754,7 +749,7 @@ function App() {
             <div className="mb-12 group relative block pb-1 transition-all lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
               <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block border border-orange-100/0 lg:group-hover:bg-orange-50/30 lg:group-hover:shadow-lg lg:group-hover:border-orange-100"></div>
 
-              <div className="relative">
+              <div className="isolate">
                 <div>
                   <h3 className="text-lg font-medium text-gray-800 group-hover:text-orange-600">
                     <a
@@ -794,7 +789,7 @@ function App() {
               </div>
 
               <ul
-                className="relative mt-4 flex flex-wrap"
+                className="pointer-events-none relative mt-4 flex flex-wrap"
                 aria-label="Technologies used"
               >
                 <li className="mr-1 mt-2">
@@ -827,7 +822,7 @@ function App() {
             <div className="mb-12 group relative block pb-1 transition-all lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
               <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block border border-orange-100/0 lg:group-hover:bg-orange-50/30 lg:group-hover:shadow-lg lg:group-hover:border-orange-100"></div>
 
-              <div className="relative sm:grid sm:grid-cols-8 sm:gap-8 md:gap-4">
+              <div className="isolate sm:grid sm:grid-cols-8 sm:gap-8 md:gap-4">
                 <div className="mb-4 flex min-h-[7.5rem] items-center justify-start sm:mb-0 sm:order-2 sm:col-span-3 sm:justify-center lg:group-hover/list:opacity-100">
                   <img
                     alt="DrJava IDE development internship project"
@@ -876,7 +871,7 @@ function App() {
               </div>
 
               <ul
-                className="relative mt-4 flex flex-wrap"
+                className="pointer-events-none relative mt-4 flex flex-wrap"
                 aria-label="Technologies used"
               >
                 <li className="mr-1 mt-2">
@@ -914,7 +909,7 @@ function App() {
             <div className="mb-12 group relative block pb-1 transition-all lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
               <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block border border-orange-100/0 lg:group-hover:bg-orange-50/30 lg:group-hover:shadow-lg lg:group-hover:border-orange-100"></div>
 
-              <div className="relative">
+              <div className="isolate">
                 <div>
                   <h3 className="text-lg font-medium text-gray-800 group-hover:text-orange-600">
                     <a
@@ -952,7 +947,7 @@ function App() {
               </div>
 
               <ul
-                className="relative mt-4 flex flex-wrap"
+                className="pointer-events-none relative mt-4 flex flex-wrap"
                 aria-label="Technologies used"
               >
                 <li className="mr-1 mt-2">
