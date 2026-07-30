@@ -422,6 +422,16 @@ function App() {
                 </li>
                 <li className="mr-1 mt-2">
                   <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                    PWA
+                  </div>
+                </li>
+                <li className="mr-1 mt-2">
+                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                    Matchmaking
+                  </div>
+                </li>
+                <li className="mr-1 mt-2">
+                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
                     Real-time UX
                   </div>
                 </li>
