@@ -318,12 +318,12 @@ function App() {
               Selected Work
             </h2>
           </div>
-          <div className="mt-4 group/list">
-            <div className="mb-12 group relative block pb-1 transition-all lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+          <div className="mt-4 project-list">
+            <div className="project-card mb-12 group relative block pb-1 transition-all">
               <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block border border-orange-100/0 lg:group-hover:bg-orange-50/30 lg:group-hover:shadow-lg lg:group-hover:border-orange-100"></div>
 
               <div className="isolate sm:grid sm:grid-cols-8 sm:gap-8 md:gap-4">
-                <div className="mb-4 flex min-h-[7.5rem] items-center justify-start sm:mb-0 sm:order-2 sm:col-span-3 sm:justify-center lg:group-hover/list:opacity-100">
+                <div className="mb-4 flex min-h-[7.5rem] items-center justify-start sm:mb-0 sm:order-2 sm:col-span-3 sm:justify-center">
                   <div
                     className="relative w-44 overflow-visible transition"
                     style={{ aspectRatio: "3/2" }}
@@ -432,11 +432,35 @@ function App() {
                 </li>
               </ul>
             </div>
-            <div className="mb-12 group relative block pb-1 transition-all lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+            <div className="-mt-6 mb-12">
+              <a
+                href="https://youtu.be/0bt3Zj32kzU"
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label="Watch the wikiracing.org project overview (opens in new tab)"
+                className="inline-flex items-center font-medium leading-tight text-gray-800 group hover:text-orange-600 transition-colors duration-150 ease-in-out"
+              >
+                Watch the project overview
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  className="ml-1 inline-block h-4 w-4 shrink-0 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 motion-reduce:transition-none"
+                  aria-hidden="true"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                    clipRule="evenodd"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+            <div className="project-card mb-12 group relative block pb-1 transition-all">
               <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block border border-orange-100/0 lg:group-hover:bg-orange-50/30 lg:group-hover:shadow-lg lg:group-hover:border-orange-100"></div>
 
               <div className="isolate sm:grid sm:grid-cols-8 sm:gap-8 md:gap-4">
-                <div className="mb-4 flex min-h-[7.5rem] items-center justify-start sm:mb-0 sm:order-2 sm:col-span-3 sm:justify-center lg:group-hover/list:opacity-100">
+                <div className="mb-4 flex min-h-[7.5rem] items-center justify-start sm:mb-0 sm:order-2 sm:col-span-3 sm:justify-center">
                   <img
                     alt="Adobe Express project screenshot or logo"
                     width="300"
@@ -559,7 +583,7 @@ function App() {
                 </svg>
               </a>
             </div>
-            <div className="mb-12 group relative block pb-1 transition-all lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+            <div className="project-card mb-12 group relative block pb-1 transition-all">
               <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block border border-orange-100/0 lg:group-hover:bg-orange-50/30 lg:group-hover:shadow-lg lg:group-hover:border-orange-100"></div>
 
               <div className="isolate">

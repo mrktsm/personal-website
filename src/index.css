@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+@media (min-width: 64rem) {
+  .project-list:has(.project-card:hover) .project-card {
+    opacity: 0.5;
+  }
+
+  .project-list:has(.project-card:hover) .project-card:hover {
+    opacity: 1;
+  }
+}
