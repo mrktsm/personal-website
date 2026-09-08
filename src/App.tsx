@@ -163,9 +163,8 @@ function App() {
             Software Engineer
           </h2>
           <p className="mt-4 max-w-xs text-base font-medium text-gray-800">
-            Creator of wikiracing.org, a real-time multiplayer game with
-            80,000+ game starts. I build backend, distributed, and full-stack
-            systems.
+            Computer Science student building backend, full-stack, and
+            real-time systems. Currently building wikiracing.org.
           </p>
           <nav
             className="nav hidden lg:block mt-16"
@@ -310,13 +309,13 @@ function App() {
             </h2>
           </div>
           <p className="text-base font-medium text-gray-800">
-            I’m a Computer Science student at <a href="https://www.gettysburg.edu/" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">Gettysburg College</a>, graduating in December 2026. I build distributed and real-time systems, and I’m the creator and sole maintainer of <a href="https://wikiracing.org" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">wikiracing.org</a>.
+            I’m a Computer Science student at <a href="https://www.gettysburg.edu/" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">Gettysburg College</a>, graduating in December 2026. My work is mostly focused on backend engineering, full-stack development, and real-time systems.
           </p>
           <p className="mt-4 text-base font-medium text-gray-800">
-            <a href="https://wikiracing.org" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">wikiracing.org</a> is a real-time multiplayer Wikipedia racing platform with 4,200+ monthly active users and 80,000+ game starts. I built its Go WebSocket backend, matchmaking and party flows, verified-results pipeline, and ghost replay system.
+            My current and largest project is <a href="https://wikiracing.org" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">wikiracing.org</a>, a real-time multiplayer Wikipedia racing platform with 4,200+ monthly active users and 80,000+ game starts. I built its Go WebSocket backend, matchmaking and party flows, verified-results pipeline, and ghost replay system.
           </p>
           <p className="mt-4 text-base font-medium text-gray-800">
-            I also built <a href="https://github.com/mrktsm/codecafe" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">CodeCafé</a>, a collaborative cloud IDE with live preview, real-time multi-user editing, and 500+ GitHub stars. Its core is an Operational Transformation engine I wrote in Java with WebSockets and Redis.
+            I also built <a href="https://github.com/mrktsm/codecafe" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">CodeCafé</a>, a collaborative cloud IDE with 500+ GitHub stars. I wrote its Operational Transformation engine from scratch—Google Docs-style simultaneous editing for code—using Java, WebSockets, and Redis Lua scripts.
           </p>
           <p className="mt-4 text-base font-medium text-gray-800">
             I’ve also contributed to <a href="https://github.com/apache/cassandra/commit/b26e33d50698f080f801983e34c883a82082b26d" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">Apache Cassandra</a> and worked as a Software Engineer at <a href="https://www.youtube.com/watch?v=K9llFoodPjI" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">Poozle</a>, where I built recommendation features on top of a vector database.
@@ -511,8 +510,9 @@ function App() {
                     </a>
                   </h3>
                   <p className="mt-2 text-sm font-medium text-gray-800 select-none">
-                    Real-time collaborative code editor in the browser for
-                    seamless pair programming and teaching.
+                    Collaborative cloud IDE powered by a custom Operational
+                    Transformation engine I built from scratch for Google
+                    Docs-style simultaneous code editing.
                   </p>
                   <div className="flex items-center">
                     <div className="mt-2 flex items-center text-sm font-medium text-gray-600">
@@ -577,10 +577,10 @@ function App() {
                 href="https://youtu.be/NRYpmEbF7lk?si=-tXQmBVewPyVX12k"
                 target="_blank"
                 rel="noreferrer noopener"
-                aria-label="Watch Google Docs for Code video (opens in new tab)"
+                aria-label="How the CodeCafé Operational Transformation engine works (opens in new tab)"
                 className="inline-flex items-center font-medium leading-tight text-gray-800 group hover:text-orange-600 transition-colors duration-150 ease-in-out"
               >
-                Watch my OT video
+                How the OT Engine Works
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
