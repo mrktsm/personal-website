@@ -163,8 +163,8 @@ function App() {
             Software Engineer
           </h2>
           <p className="mt-4 max-w-xs text-base font-medium text-gray-800">
-            Computer Science student building backend, full-stack, and
-            real-time systems. Currently building wikiracing.org.
+            Computer Science student building backend, distributed, and
+            real-time systems.
           </p>
           <nav
             className="nav hidden lg:block mt-16"
@@ -264,7 +264,7 @@ function App() {
               href="https://github.com/mrktsm"
               target="_blank"
               rel="noreferrer noopener"
-              className="inline-flex rounded text-2xl text-gray-600 transition-colors hover:text-gray-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-500"
+              className="inline-flex rounded text-2xl text-gray-600 transition-colors hover:text-[#181717] focus-visible:text-[#181717] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-500"
               aria-label="GitHub (opens in new tab)"
             >
               <FaGithub aria-hidden="true" />
@@ -275,7 +275,7 @@ function App() {
               href="https://linkedin.com/in/marko-tsymbaliuk"
               target="_blank"
               rel="noreferrer noopener"
-              className="inline-flex rounded text-2xl text-gray-600 transition-colors hover:text-gray-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-500"
+              className="inline-flex rounded text-2xl text-gray-600 transition-colors hover:text-[#0A66C2] focus-visible:text-[#0A66C2] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-500"
               aria-label="LinkedIn (opens in new tab)"
             >
               <FaLinkedin aria-hidden="true" />
@@ -286,7 +286,7 @@ function App() {
               href="https://www.youtube.com/@markotsymbaliuk"
               target="_blank"
               rel="noreferrer noopener"
-              className="inline-flex rounded text-2xl text-gray-600 transition-colors hover:text-gray-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-500"
+              className="inline-flex rounded text-2xl text-gray-600 transition-colors hover:text-[#FF0000] focus-visible:text-[#FF0000] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-500"
               aria-label="YouTube (opens in new tab)"
             >
               <FaYoutube aria-hidden="true" />
