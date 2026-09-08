@@ -439,10 +439,10 @@ function App() {
                 href="https://www.youtube.com/watch?v=OoThXai9ujM"
                 target="_blank"
                 rel="noreferrer noopener"
-                aria-label="Watch wikiracing.org gameplay (opens in new tab)"
+                aria-label="Watch a wikiracing.org race (opens in new tab)"
                 className="inline-flex items-center font-medium leading-tight text-gray-800 group hover:text-orange-600 transition-colors duration-150 ease-in-out"
               >
-                Watch gameplay
+                Watch a Race
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
