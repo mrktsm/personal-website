@@ -3,7 +3,7 @@ import adobeExpressScreenshot from "./assets/codecafe-light.png";
 import wikiracingDesktopScreenshot from "./assets/wikiracing-desktop.png";
 import wikiracingMobileScreenshot from "./assets/wikiracing-mobile.png";
 import drjavaImage from "./assets/drjava-light.png";
-import { FaGithub, FaLinkedin, FaStar } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaStar, FaYoutube } from "react-icons/fa";
 // import BlobFlower from "./BlobFlower";
 
 function App() {
@@ -282,6 +282,17 @@ function App() {
               <FaLinkedin aria-hidden="true" />
             </a>
           </li>
+          <li>
+            <a
+              href="https://www.youtube.com/@markotsymbaliuk"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="inline-flex rounded text-2xl text-gray-600 transition-colors hover:text-gray-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-500"
+              aria-label="YouTube (opens in new tab)"
+            >
+              <FaYoutube aria-hidden="true" />
+            </a>
+          </li>
         </ul>
       </header>
 
@@ -439,10 +450,10 @@ function App() {
                 href="https://www.youtube.com/watch?v=OoThXai9ujM"
                 target="_blank"
                 rel="noreferrer noopener"
-                aria-label="Watch a wikiracing.org race (opens in new tab)"
+                aria-label="Watch wikiracing.org gameplay (opens in new tab)"
                 className="inline-flex items-center font-medium leading-tight text-gray-800 group hover:text-orange-600 transition-colors duration-150 ease-in-out"
               >
-                Watch a Race
+                Gameplay
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
