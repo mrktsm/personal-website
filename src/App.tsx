@@ -3,7 +3,7 @@ import adobeExpressScreenshot from "./assets/codecafe-light.png";
 import wikiracingDesktopScreenshot from "./assets/wikiracing-desktop.png";
 import wikiracingMobileScreenshot from "./assets/wikiracing-mobile.png";
 import drjavaImage from "./assets/drjava-light.png";
-import { FaStar } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaStar } from "react-icons/fa";
 // import BlobFlower from "./BlobFlower";
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
   const [codeCafeStars, setCodeCafeStars] = useState<string | number>("200+");
   const [areStarsFetched, setAreStarsFetched] = useState<boolean>(false);
   const [wikiRacingGames, setWikiRacingGames] = useState<string | number>(
-    "35,000+",
+    "80,000+",
   );
   const [areGamesFetched, setAreGamesFetched] = useState<boolean>(false);
   const [isCodeCafeImageLoaded, setIsCodeCafeImageLoaded] =
@@ -163,7 +163,9 @@ function App() {
             Software Engineer
           </h2>
           <p className="mt-4 max-w-xs text-base font-medium text-gray-800">
-            Computer Science student building backend, full-stack, and real-time systems.
+            Creator of wikiracing.org, a real-time multiplayer game with
+            80,000+ game starts. I build backend, distributed, and full-stack
+            systems.
           </p>
           <nav
             className="nav hidden lg:block mt-16"
@@ -257,27 +259,27 @@ function App() {
             </ul>
           </nav>
         </div>
-        <ul className="mt-8 flex items-center">
-          <li className="mr-4">
+        <ul className="mt-8 flex items-center gap-4">
+          <li>
             <a
               href="https://github.com/mrktsm"
               target="_blank"
               rel="noreferrer noopener"
-              className="text-gray-600 hover:text-gray-900"
+              className="inline-flex rounded text-2xl text-gray-600 transition-colors hover:text-gray-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-500"
               aria-label="GitHub (opens in new tab)"
             >
-              GitHub
+              <FaGithub aria-hidden="true" />
             </a>
           </li>
-          <li className="mr-4">
+          <li>
             <a
               href="https://linkedin.com/in/marko-tsymbaliuk"
               target="_blank"
               rel="noreferrer noopener"
-              className="text-gray-600 hover:text-gray-900"
+              className="inline-flex rounded text-2xl text-gray-600 transition-colors hover:text-gray-900 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-500"
               aria-label="LinkedIn (opens in new tab)"
             >
-              LinkedIn
+              <FaLinkedin aria-hidden="true" />
             </a>
           </li>
         </ul>
@@ -297,16 +299,16 @@ function App() {
             </h2>
           </div>
           <p className="text-base font-medium text-gray-800">
-            I’m a Computer Science student at <a href="https://www.gettysburg.edu/" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">Gettysburg College</a>, graduating in December 2026. My work is mostly focused on backend engineering, full-stack development, and real-time systems.
+            I’m a Computer Science student at <a href="https://www.gettysburg.edu/" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">Gettysburg College</a>, graduating in December 2026. I build distributed and real-time systems, and I’m the creator and sole maintainer of <a href="https://wikiracing.org" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">wikiracing.org</a>.
           </p>
           <p className="mt-4 text-base font-medium text-gray-800">
-            My largest project is <a href="https://github.com/mrktsm/codecafe" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">CodeCafé</a>, a collaborative cloud IDE with live preview, real-time multi-user editing, and 500+ GitHub stars. I built its core Operational Transformation engine in Java with WebSockets and Redis, which pushed me deeper into distributed systems and open source.
+            <a href="https://wikiracing.org" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">wikiracing.org</a> is a real-time multiplayer Wikipedia racing platform with 4,200+ monthly active users and 80,000+ game starts. I built its Go WebSocket backend, matchmaking and party flows, verified-results pipeline, and ghost replay system.
           </p>
           <p className="mt-4 text-base font-medium text-gray-800">
-            Since then, I’ve contributed to <a href="https://github.com/apache/cassandra/commit/b26e33d50698f080f801983e34c883a82082b26d" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">Apache Cassandra</a> and worked as a Software Engineer at <a href="https://www.youtube.com/watch?v=K9llFoodPjI" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">Poozle</a>, where I built recommendation features on top of a vector database.
+            I also built <a href="https://github.com/mrktsm/codecafe" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">CodeCafé</a>, a collaborative cloud IDE with live preview, real-time multi-user editing, and 500+ GitHub stars. Its core is an Operational Transformation engine I wrote in Java with WebSockets and Redis.
           </p>
           <p className="mt-4 text-base font-medium text-gray-800">
-            More recently, I’ve been building <a href="https://wikiracing.org" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">wikiracing.org</a>, a real-time Wikipedia racing platform where players race from one article to another using only Wikipedia links. It includes matchmaking, live cursors, leaderboards, mobile support, and PWA support.
+            I’ve also contributed to <a href="https://github.com/apache/cassandra/commit/b26e33d50698f080f801983e34c883a82082b26d" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">Apache Cassandra</a> and worked as a Software Engineer at <a href="https://www.youtube.com/watch?v=K9llFoodPjI" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">Poozle</a>, where I built recommendation features on top of a vector database.
           </p>
         </section>
         <section
@@ -374,9 +376,9 @@ function App() {
                     </a>
                   </h3>
                   <p className="mt-2 text-sm font-medium text-gray-800 select-none">
-                    Real-time Wikipedia racing platform with quick matchmaking,
-                    solo practice, profiles, stats, leaderboards, and mobile
-                    support.
+                    Real-time multiplayer Wikipedia racing with matchmaking,
+                    parties, verified results, ghost replays, profiles, and
+                    global leaderboards.
                   </p>
                   <div className="flex items-center">
                     <div className="mt-2 flex items-center text-sm font-medium text-gray-600">
@@ -384,7 +386,7 @@ function App() {
                         {typeof wikiRacingGames === "number"
                           ? wikiRacingGames.toLocaleString()
                           : wikiRacingGames}{" "}
-                        Games Played
+                        Game Starts
                       </span>
                     </div>
                   </div>
@@ -434,13 +436,13 @@ function App() {
             </div>
             <div className="-mt-6 mb-12">
               <a
-                href="https://youtu.be/0bt3Zj32kzU"
+                href="https://www.youtube.com/watch?v=OoThXai9ujM"
                 target="_blank"
                 rel="noreferrer noopener"
-                aria-label="Watch the wikiracing.org project overview (opens in new tab)"
+                aria-label="Watch wikiracing.org gameplay (opens in new tab)"
                 className="inline-flex items-center font-medium leading-tight text-gray-800 group hover:text-orange-600 transition-colors duration-150 ease-in-out"
               >
-                Watch the project overview
+                Watch gameplay
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
