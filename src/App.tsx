@@ -312,10 +312,10 @@ function App() {
             I’m a Computer Science student at <a href="https://www.gettysburg.edu/" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">Gettysburg College</a>, graduating in December 2026. My work is mostly focused on backend engineering, full-stack development, and real-time systems.
           </p>
           <p className="mt-4 text-base font-medium text-gray-800">
-            My current and largest project is <a href="https://wikiracing.org" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">wikiracing.org</a>, a real-time multiplayer Wikipedia racing platform with 4,200+ monthly active users and 80,000+ game starts. I built its Go WebSocket backend, matchmaking and party flows, verified-results pipeline, and ghost replay system.
+            My current and largest project is <a href="https://wikiracing.org" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">wikiracing.org</a>, a real-time multiplayer platform where players race from one Wikipedia article to another using only in-page links. It has 4,200+ monthly active users and 80,000+ game starts. I built its Go WebSocket backend, matchmaking and party flows, verified-results pipeline, and ghost replay system.
           </p>
           <p className="mt-4 text-base font-medium text-gray-800">
-            I also built <a href="https://github.com/mrktsm/codecafe" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">CodeCafé</a>, a collaborative cloud IDE with 500+ GitHub stars. I wrote its Operational Transformation engine from scratch—Google Docs-style simultaneous editing for code—using Java, WebSockets, and Redis Lua scripts.
+            I also built <a href="https://github.com/mrktsm/codecafe" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">CodeCafé</a>, a collaborative cloud IDE with 500+ GitHub stars. I wrote its Operational Transformation engine from scratch using Java, WebSockets, and Redis Lua scripts, enabling Google Docs-style simultaneous editing for code.
           </p>
           <p className="mt-4 text-base font-medium text-gray-800">
             I’ve also contributed to <a href="https://github.com/apache/cassandra/commit/b26e33d50698f080f801983e34c883a82082b26d" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">Apache Cassandra</a> and worked as a Software Engineer at <a href="https://www.youtube.com/watch?v=K9llFoodPjI" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">Poozle</a>, where I built recommendation features on top of a vector database.
@@ -386,9 +386,9 @@ function App() {
                     </a>
                   </h3>
                   <p className="mt-2 text-sm font-medium text-gray-800 select-none">
-                    Real-time multiplayer Wikipedia racing with matchmaking,
-                    parties, verified results, ghost replays, profiles, and
-                    global leaderboards.
+                    Multiplayer platform for racing across Wikipedia using only
+                    article links, with matchmaking, ghost replays, and global
+                    leaderboards.
                   </p>
                   <div className="flex items-center">
                     <div className="mt-2 flex items-center text-sm font-medium text-gray-600">
