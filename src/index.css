@@ -31,10 +31,6 @@ body {
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
-  /* iOS Safari 26 clips fully opaque fixed layers at the top edge of its
-     floating toolbar. Any transparency composites the layer separately, which
-     lets the shader continue behind the toolbar. */
-  opacity: 0.99;
 }
 
 /* iOS Safari 26 ignores theme-color and, at scrollY 0, fills the status bar
@@ -53,6 +49,25 @@ body {
       var(--safe-area-color) env(safe-area-inset-top, 0px),
       color-mix(in srgb, var(--safe-area-color) 60%, transparent)
         calc(env(safe-area-inset-top, 0px) + 1.25rem),
+      transparent 100%
+    );
+    content: "";
+    pointer-events: none;
+  }
+
+  /* Fixed layers end at the top of Safari's bottom toolbar, and the area behind
+     it shows the body's background-color, so the shader fades into that too.
+     The layer's bottom edge follows the toolbar as it shrinks and grows. */
+  .shader-background::before {
+    position: absolute;
+    inset: auto 0 0;
+    z-index: 1;
+    height: calc(env(safe-area-inset-bottom, 0px) + 4rem);
+    background: linear-gradient(
+      to top,
+      var(--safe-area-color) env(safe-area-inset-bottom, 0px),
+      color-mix(in srgb, var(--safe-area-color) 60%, transparent)
+        calc(env(safe-area-inset-bottom, 0px) + 1.25rem),
       transparent 100%
     );
     content: "";
