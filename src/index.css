@@ -31,6 +31,10 @@ body {
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
+  /* iOS Safari 26 clips fully opaque fixed layers at the top edge of its
+     floating toolbar. Any transparency composites the layer separately, which
+     lets the shader continue behind the toolbar. */
+  opacity: 0.99;
 }
 
 /* iOS Safari 26 ignores theme-color and, at scrollY 0, fills the status bar
