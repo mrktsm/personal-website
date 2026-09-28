@@ -4,7 +4,6 @@ import wikiracingDesktopScreenshot from "./assets/wikiracing-desktop.png";
 import wikiracingMobileScreenshot from "./assets/wikiracing-mobile.png";
 import drjavaImage from "./assets/drjava-light.png";
 import { FaGithub, FaLinkedin, FaStar, FaYoutube } from "react-icons/fa";
-// import BlobFlower from "./BlobFlower";
 
 function App() {
   const [activeSection, setActiveSection] = useState<string>("about");
@@ -12,7 +11,7 @@ function App() {
   const [codeCafeStars, setCodeCafeStars] = useState<string | number>("200+");
   const [areStarsFetched, setAreStarsFetched] = useState<boolean>(false);
   const [wikiRacingGames, setWikiRacingGames] = useState<string | number>(
-    "80,000+",
+    "110,000+",
   );
   const [areGamesFetched, setAreGamesFetched] = useState<boolean>(false);
   const [isCodeCafeImageLoaded, setIsCodeCafeImageLoaded] =
@@ -145,15 +144,10 @@ function App() {
 
   return (
     <div
-      className={`mx-auto min-h-screen max-w-screen-xl font-sans text-black lg:flex lg:justify-between lg:gap-4 relative selection:bg-orange-300 selection:text-orange-900 transition-opacity duration-500 ease-in-out ${
+      className={`mx-auto min-h-screen max-w-screen-xl font-sans text-black lg:flex lg:justify-between lg:gap-4 relative z-10 selection:bg-slate-300 selection:text-slate-900 transition-opacity duration-500 ease-in-out ${
         isLoadingPage ? "opacity-0" : "opacity-100"
       }`}
     >
-      {/* Place BlobFlower behind other content */}
-      {/* <div className="fixed inset-0 z-0 hidden lg:block">
-        <BlobFlower />
-      </div> */}
-
       <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[40%] lg:flex-col lg:justify-between px-6 py-12 lg:px-24 lg:py-24 z-30">
         <div>
           <h1 className="text-4xl font-medium text-gray-800 whitespace-nowrap">
@@ -264,7 +258,7 @@ function App() {
               href="https://github.com/mrktsm"
               target="_blank"
               rel="noreferrer noopener"
-              className="inline-flex rounded text-2xl text-gray-600 transition-colors hover:text-[#181717] focus-visible:text-[#181717] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-500"
+              className="inline-flex rounded text-2xl text-gray-600 transition-colors hover:text-[#181717] focus-visible:text-[#181717] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate-700"
               aria-label="GitHub (opens in new tab)"
             >
               <FaGithub aria-hidden="true" />
@@ -275,7 +269,7 @@ function App() {
               href="https://linkedin.com/in/marko-tsymbaliuk"
               target="_blank"
               rel="noreferrer noopener"
-              className="inline-flex rounded text-2xl text-gray-600 transition-colors hover:text-[#0A66C2] focus-visible:text-[#0A66C2] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-500"
+              className="inline-flex rounded text-2xl text-gray-600 transition-colors hover:text-[#0A66C2] focus-visible:text-[#0A66C2] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate-700"
               aria-label="LinkedIn (opens in new tab)"
             >
               <FaLinkedin aria-hidden="true" />
@@ -286,7 +280,7 @@ function App() {
               href="https://www.youtube.com/@markotsymbaliuk"
               target="_blank"
               rel="noreferrer noopener"
-              className="inline-flex rounded text-2xl text-gray-600 transition-colors hover:text-[#FF0000] focus-visible:text-[#FF0000] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-500"
+              className="inline-flex rounded text-2xl text-gray-600 transition-colors hover:text-[#FF0000] focus-visible:text-[#FF0000] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-slate-700"
               aria-label="YouTube (opens in new tab)"
             >
               <FaYoutube aria-hidden="true" />
@@ -303,7 +297,7 @@ function App() {
           id="about"
           className="mb-16 scroll-mt-16 md:mb-20 lg:mb-24 lg:scroll-mt-24"
         >
-          <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-white/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+          <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-white/25 px-6 py-5 backdrop-blur-xl md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
             <h2 className="text-sm font-bold uppercase tracking-widest text-gray-800 lg:sr-only">
               About
             </h2>
@@ -312,7 +306,7 @@ function App() {
             I’m a Computer Science student at <a href="https://www.gettysburg.edu/" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">Gettysburg College</a>, graduating in December 2026. My work is mostly focused on backend engineering, full-stack development, and real-time systems.
           </p>
           <p className="mt-4 text-base font-medium text-gray-800">
-            My current and largest project is <a href="https://wikiracing.org" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">wikiracing.org</a>, a real-time multiplayer platform where players race from one Wikipedia article to another using only in-page links. It has 4,200+ monthly active users and 80,000+ game starts. I built its Go WebSocket backend, matchmaking and party flows, verified-results pipeline, and ghost replay system.
+            My current and largest project is <a href="https://wikiracing.org" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">wikiracing.org</a>, a real-time multiplayer platform where players race from one Wikipedia article to another using only in-page links. It has 5,000+ monthly users, 100,000+ monthly pageviews, and 110,000+ game starts. I built its Go WebSocket backend, matchmaking and party flows, verified-results pipeline, and ghost replay system.
           </p>
           <p className="mt-4 text-base font-medium text-gray-800">
             I also built <a href="https://github.com/mrktsm/codecafe" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">CodeCafé</a>, a collaborative cloud IDE with 500+ GitHub stars. I wrote its Operational Transformation engine from scratch using Java, WebSockets, and Redis Lua scripts, enabling Google Docs-style simultaneous editing for code.
@@ -325,14 +319,14 @@ function App() {
           id="projects"
           className="mb-16 scroll-mt-16 md:mb-20 lg:mb-24 lg:scroll-mt-24"
         >
-          <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-white/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+          <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-white/25 px-6 py-5 backdrop-blur-xl md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
             <h2 className="text-sm font-bold uppercase tracking-widest text-gray-800 lg:sr-only">
               Selected Work
             </h2>
           </div>
           <div className="mt-4 project-list">
             <div className="project-card mb-12 group relative block pb-1 transition-all">
-              <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block border border-orange-100/0 lg:group-hover:bg-orange-50/30 lg:group-hover:shadow-lg lg:group-hover:border-orange-100"></div>
+              <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-orange-50/30 lg:group-hover:shadow-[0_16px_44px_rgba(46,42,84,0.12)]"></div>
 
               <div className="isolate sm:grid sm:grid-cols-8 sm:gap-8 md:gap-4">
                 <div className="mb-4 flex min-h-[7.5rem] items-center justify-start sm:mb-0 sm:order-2 sm:col-span-3 sm:justify-center">
@@ -361,7 +355,7 @@ function App() {
                   </div>
                 </div>
                 <div className="sm:col-span-5">
-                  <h3 className="text-lg font-medium text-gray-800 group-hover:text-orange-600">
+                  <h3 className="text-lg font-medium text-gray-800 group-hover:text-slate-950">
                     <a
                       href="https://wikiracing.org"
                       target="_blank"
@@ -408,37 +402,37 @@ function App() {
                 aria-label="Technologies used"
               >
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     React
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     TypeScript
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     Go
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     WebSockets
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     PostgreSQL
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     PWA
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     Matchmaking
                   </div>
                 </li>
@@ -450,7 +444,7 @@ function App() {
                 target="_blank"
                 rel="noreferrer noopener"
                 aria-label="Watch wikiracing.org gameplay (opens in new tab)"
-                className="inline-flex items-center font-medium leading-tight text-gray-800 group hover:text-orange-600 transition-colors duration-150 ease-in-out"
+                className="inline-flex items-center font-medium leading-tight text-gray-800 group hover:text-slate-950 transition-colors duration-150 ease-in-out"
               >
                 Gameplay
                 <svg
@@ -469,7 +463,7 @@ function App() {
               </a>
             </div>
             <div className="project-card mb-12 group relative block pb-1 transition-all">
-              <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block border border-orange-100/0 lg:group-hover:bg-orange-50/30 lg:group-hover:shadow-lg lg:group-hover:border-orange-100"></div>
+              <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-orange-50/30 lg:group-hover:shadow-[0_16px_44px_rgba(46,42,84,0.12)]"></div>
 
               <div className="isolate sm:grid sm:grid-cols-8 sm:gap-8 md:gap-4">
                 <div className="mb-4 flex min-h-[7.5rem] items-center justify-start sm:mb-0 sm:order-2 sm:col-span-3 sm:justify-center">
@@ -485,7 +479,7 @@ function App() {
                   />
                 </div>
                 <div className="sm:col-span-5">
-                  <h3 className="text-lg font-medium text-gray-800 group-hover:text-orange-600">
+                  <h3 className="text-lg font-medium text-gray-800 group-hover:text-slate-950">
                     <a
                       href="https://github.com/mrktsm/codecafe"
                       target="_blank"
@@ -531,42 +525,42 @@ function App() {
                 aria-label="Technologies used"
               >
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     React
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     TypeScript
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     Java
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     Spring Boot
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     WebSockets
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     Redis
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     AWS
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     OT
                   </div>
                 </li>
@@ -578,7 +572,7 @@ function App() {
                 target="_blank"
                 rel="noreferrer noopener"
                 aria-label="How the CodeCafé Operational Transformation engine works (opens in new tab)"
-                className="inline-flex items-center font-medium leading-tight text-gray-800 group hover:text-orange-600 transition-colors duration-150 ease-in-out"
+                className="inline-flex items-center font-medium leading-tight text-gray-800 group hover:text-slate-950 transition-colors duration-150 ease-in-out"
               >
                 How the OT Engine Works
                 <svg
@@ -597,11 +591,11 @@ function App() {
               </a>
             </div>
             <div className="project-card mb-12 group relative block pb-1 transition-all">
-              <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block border border-orange-100/0 lg:group-hover:bg-orange-50/30 lg:group-hover:shadow-lg lg:group-hover:border-orange-100"></div>
+              <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-orange-50/30 lg:group-hover:shadow-[0_16px_44px_rgba(46,42,84,0.12)]"></div>
 
               <div className="isolate">
                 <div>
-                  <h3 className="text-lg font-medium text-gray-800 group-hover:text-orange-600">
+                  <h3 className="text-lg font-medium text-gray-800 group-hover:text-slate-950">
                     <a
                       href="https://github.com/mrktsm/redis-in-go"
                       target="_blank"
@@ -638,32 +632,32 @@ function App() {
                 aria-label="Technologies used"
               >
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     Go
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     TCP Sockets
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     B-trees
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     Concurrency
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     Database Design
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     TCP Sockets
                   </div>
                 </li>
@@ -672,7 +666,7 @@ function App() {
           </div>
           <div className="mt-12">
             <a
-              className="inline-flex items-center font-medium leading-tight text-gray-800 group hover:text-orange-600"
+              className="inline-flex items-center font-medium leading-tight text-gray-800 group hover:text-slate-950"
               href="https://github.com/mrktsm"
               target="_blank"
               rel="noreferrer noopener"
@@ -699,18 +693,18 @@ function App() {
           id="opensource"
           className="mb-16 scroll-mt-16 md:mb-20 lg:mb-24 lg:scroll-mt-24"
         >
-          <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-white/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+          <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-white/25 px-6 py-5 backdrop-blur-xl md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
             <h2 className="text-sm font-bold uppercase tracking-widest text-gray-800 lg:sr-only">
               Open Source
             </h2>
           </div>
           <div className="mt-4 group/list">
             <div className="mb-12 group relative block pb-1 transition-all lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-              <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block border border-orange-100/0 lg:group-hover:bg-orange-50/30 lg:group-hover:shadow-lg lg:group-hover:border-orange-100"></div>
+              <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-orange-50/30 lg:group-hover:shadow-[0_16px_44px_rgba(46,42,84,0.12)]"></div>
 
               <div className="isolate">
                 <div>
-                  <h3 className="text-lg font-medium text-gray-800 group-hover:text-orange-600">
+                  <h3 className="text-lg font-medium text-gray-800 group-hover:text-slate-950">
                     <a
                       href="https://github.com/apache/cassandra/commit/b26e33d50698f080f801983e34c883a82082b26d"
                       target="_blank"
@@ -750,22 +744,22 @@ function App() {
                 aria-label="Technologies used"
               >
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     Java
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     Apache Cassandra
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     Database Systems
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     Open Source
                   </div>
                 </li>
@@ -777,18 +771,18 @@ function App() {
           id="experience"
           className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
         >
-          <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-white/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
+          <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-white/25 px-6 py-5 backdrop-blur-xl md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
             <h2 className="text-sm font-bold uppercase tracking-widest text-gray-800 lg:sr-only">
               Experience
             </h2>
           </div>
           <div className="mt-4 group/list">
             <div className="mb-12 group relative block pb-1 transition-all lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-              <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block border border-orange-100/0 lg:group-hover:bg-orange-50/30 lg:group-hover:shadow-lg lg:group-hover:border-orange-100"></div>
+              <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-orange-50/30 lg:group-hover:shadow-[0_16px_44px_rgba(46,42,84,0.12)]"></div>
 
               <div className="isolate">
                 <div>
-                  <h3 className="text-lg font-medium text-gray-800 group-hover:text-orange-600">
+                  <h3 className="text-lg font-medium text-gray-800 group-hover:text-slate-950">
                     <a
                       href="https://www.youtube.com/watch?v=K9llFoodPjI"
                       target="_blank"
@@ -830,34 +824,34 @@ function App() {
                 aria-label="Technologies used"
               >
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     React Native
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     Node.js
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     Vector Databases
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     Recommendations
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     Embeddings
                   </div>
                 </li>
               </ul>
             </div>
             <div className="mb-12 group relative block pb-1 transition-all lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-              <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block border border-orange-100/0 lg:group-hover:bg-orange-50/30 lg:group-hover:shadow-lg lg:group-hover:border-orange-100"></div>
+              <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-orange-50/30 lg:group-hover:shadow-[0_16px_44px_rgba(46,42,84,0.12)]"></div>
 
               <div className="isolate sm:grid sm:grid-cols-8 sm:gap-8 md:gap-4">
                 <div className="mb-4 flex min-h-[7.5rem] items-center justify-start sm:mb-0 sm:order-2 sm:col-span-3 sm:justify-center lg:group-hover/list:opacity-100">
@@ -872,7 +866,7 @@ function App() {
                   />
                 </div>
                 <div className="sm:col-span-5">
-                  <h3 className="text-lg font-medium text-gray-800 group-hover:text-orange-600">
+                  <h3 className="text-lg font-medium text-gray-800 group-hover:text-slate-950">
                     <a
                       href="https://www.youtube.com/watch?v=4BScIcCiIsk&list=PLs8Bzf5mYLHX8fncmAPdhv0spaHDgvnGW"
                       target="_blank"
@@ -912,43 +906,43 @@ function App() {
                 aria-label="Technologies used"
               >
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     React
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     AI/ML
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     Java Swing
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     Java
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     Model Context Protocol
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     SSE
                   </div>
                 </li>
               </ul>
             </div>
             <div className="mb-12 group relative block pb-1 transition-all lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-              <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block border border-orange-100/0 lg:group-hover:bg-orange-50/30 lg:group-hover:shadow-lg lg:group-hover:border-orange-100"></div>
+              <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-orange-50/30 lg:group-hover:shadow-[0_16px_44px_rgba(46,42,84,0.12)]"></div>
 
               <div className="isolate">
                 <div>
-                  <h3 className="text-lg font-medium text-gray-800 group-hover:text-orange-600">
+                  <h3 className="text-lg font-medium text-gray-800 group-hover:text-slate-950">
                     <a
                       href="https://www.gettysburg.edu"
                       target="_blank"
@@ -988,22 +982,22 @@ function App() {
                 aria-label="Technologies used"
               >
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     Python
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     Teaching
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     OOP
                   </div>
                 </li>
                 <li className="mr-1 mt-2">
-                  <div className="flex items-center rounded-full bg-orange-400/10 px-3 py-1 text-xs font-medium leading-5 text-orange-500 select-none">
+                  <div className="flex items-center rounded-full bg-slate-700/10 px-3 py-1 text-xs font-medium leading-5 text-slate-700 select-none">
                     Mentoring
                   </div>
                 </li>
@@ -1012,7 +1006,7 @@ function App() {
           </div>
           <div className="mt-8">
             <a
-              className="inline-flex items-center font-medium leading-tight text-gray-800 group hover:text-orange-600 transition-colors duration-150 ease-in-out"
+              className="inline-flex items-center font-medium leading-tight text-gray-800 group hover:text-slate-950 transition-colors duration-150 ease-in-out"
               href="/Marko_Tsymbaliuk_Resume.pdf"
               target="_blank"
               rel="noreferrer noopener"

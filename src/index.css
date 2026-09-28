@@ -1,5 +1,22 @@
 @import "tailwindcss";
 
+html, body {
+  background-color: #e9eef9;
+  background-image:
+    radial-gradient(ellipse 65% 75% at 15% 65%, #aebfe9, transparent 75%),
+    radial-gradient(ellipse 60% 70% at 75% 25%, #b7b5e5, transparent 75%),
+    radial-gradient(ellipse 55% 70% at 80% 85%, #a4bae6, transparent 75%);
+  background-attachment: fixed;
+}
+
+.shader-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
 @media (min-width: 64rem) {
   .project-list:has(.project-card:hover) .project-card {
     opacity: 0.5;
