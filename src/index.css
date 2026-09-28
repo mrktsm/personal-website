@@ -11,15 +11,14 @@ body,
   min-height: 100dvh;
 }
 
+/* A solid color, not a gradient: iOS Safari shows the body's background behind
+   its status bar and bottom toolbar, and it doesn't support fixed backgrounds,
+   so a gradient here would stretch down the page and shift color there as you
+   scroll. */
 html,
 body {
   margin: 0;
   background-color: var(--safe-area-color);
-  background-image:
-    radial-gradient(ellipse 65% 75% at 15% 65%, #aebfe9, transparent 75%),
-    radial-gradient(ellipse 60% 70% at 75% 25%, #b7b5e5, transparent 75%),
-    radial-gradient(ellipse 55% 70% at 80% 85%, #a4bae6, transparent 75%);
-  background-attachment: fixed;
 }
 
 .shader-background {
@@ -31,6 +30,11 @@ body {
   z-index: 0;
   pointer-events: none;
   overflow: hidden;
+  /* Shown until the shader draws, and kept if WebGL is unavailable. */
+  background-image:
+    radial-gradient(ellipse 65% 75% at 15% 65%, #aebfe9, transparent 75%),
+    radial-gradient(ellipse 60% 70% at 75% 25%, #b7b5e5, transparent 75%),
+    radial-gradient(ellipse 55% 70% at 80% 85%, #a4bae6, transparent 75%);
 }
 
 /* iOS Safari 26 ignores theme-color and, at scrollY 0, fills the status bar
@@ -57,17 +61,21 @@ body {
 
   /* Fixed layers end at the top of Safari's bottom toolbar, and the area behind
      it shows the body's background-color, so the shader fades into that too.
-     The layer's bottom edge follows the toolbar as it shrinks and grows. */
+     The eased stops flatten out into the edge; a straight ramp that stops
+     abruptly reads as a faint line. The layer's bottom edge follows the
+     toolbar as it shrinks and grows. */
   .shader-background::before {
     position: absolute;
     inset: auto 0 0;
     z-index: 1;
-    height: calc(env(safe-area-inset-bottom, 0px) + 4rem);
+    height: calc(env(safe-area-inset-bottom, 0px) + 5rem);
     background: linear-gradient(
       to top,
       var(--safe-area-color) env(safe-area-inset-bottom, 0px),
-      color-mix(in srgb, var(--safe-area-color) 60%, transparent)
-        calc(env(safe-area-inset-bottom, 0px) + 1.25rem),
+      color-mix(in srgb, var(--safe-area-color) 90%, transparent) 20%,
+      color-mix(in srgb, var(--safe-area-color) 65%, transparent) 42%,
+      color-mix(in srgb, var(--safe-area-color) 35%, transparent) 65%,
+      color-mix(in srgb, var(--safe-area-color) 12%, transparent) 85%,
       transparent 100%
     );
     content: "";

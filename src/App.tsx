@@ -60,9 +60,7 @@ function App() {
     "110,000+",
   );
   const [areGamesFetched, setAreGamesFetched] = useState<boolean>(false);
-  const [isCodeCafeImageLoaded, setIsCodeCafeImageLoaded] =
-    useState<boolean>(false);
-  const [isLoadingPage, setIsLoadingPage] = useState<boolean>(true);
+  const [hasRevealTimedOut, setHasRevealTimedOut] = useState<boolean>(false);
 
   const handleOpenSourceClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -138,7 +136,9 @@ function App() {
   }, [isNearBottom]);
 
   useEffect(() => {
-    fetch("https://api.github.com/repos/mrktsm/codecafe")
+    fetch("https://api.github.com/repos/mrktsm/codecafe", {
+      signal: AbortSignal.timeout(5000),
+    })
       .then((response) => response.json())
       .then((data) => {
         if (data && typeof data.stargazers_count === "number") {
@@ -159,8 +159,7 @@ function App() {
 
   useEffect(() => {
     // The count is public and cached server side, so no key and no Supabase
-    // client here. The timeout is what keeps a hung request from holding the
-    // page reveal below, since that waits on this.
+    // client here.
     fetch("https://api.wikiracing.org/api/stats", {
       signal: AbortSignal.timeout(5000),
     })
@@ -182,11 +181,16 @@ function App() {
       });
   }, []);
 
+  // The page waits briefly for the live counts so they don't visibly swap in
+  // over the placeholders, but never longer than this on a slow connection;
+  // late counts just update in place.
   useEffect(() => {
-    if (areStarsFetched && areGamesFetched && isCodeCafeImageLoaded) {
-      setIsLoadingPage(false);
-    }
-  }, [areStarsFetched, areGamesFetched, isCodeCafeImageLoaded]);
+    const timer = setTimeout(() => setHasRevealTimedOut(true), 1200);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const isLoadingPage =
+    !hasRevealTimedOut && !(areStarsFetched && areGamesFetched);
 
   return (
     <div
@@ -505,7 +509,6 @@ function App() {
                       height="864"
                       decoding="async"
                       src={adobeExpressScreenshot}
-                      onLoad={() => setIsCodeCafeImageLoaded(true)}
                       className="h-full w-full object-contain drop-shadow-[0_4px_8px_rgba(46,42,84,0.16)] transition"
                     />
                   </div>
