@@ -1,0 +1,8 @@
+{
+  "redirects": [
+    { "source": "/v/wikiracing", "destination": "https://www.youtube.com/watch?v=OoThXai9ujM", "permanent": false },
+    { "source": "/v/codecafe", "destination": "https://youtu.be/NRYpmEbF7lk", "permanent": false },
+    { "source": "/v/mcp-tutor", "destination": "https://youtu.be/4BScIcCiIsk", "permanent": false },
+    { "source": "/v/integrity", "destination": "https://youtu.be/10rLBWy_s7U", "permanent": false }
+  ]
+}
