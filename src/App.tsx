@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
-import adobeExpressScreenshot from "./assets/codecafe-clean-tight.png";
-import wikiracingDesktopScreenshot from "./assets/wikiracing-desktop.png";
-import drjavaImage from "./assets/drjava-clean-tight.png";
+import adobeExpressScreenshot from "./assets/codecafe-clean-tight.webp";
+import wikiracingDesktopScreenshot from "./assets/wikiracing-desktop.webp";
+import drjavaImage from "./assets/drjava-clean-tight.webp";
 import { FaGithub, FaLinkedin, FaStar, FaYoutube } from "react-icons/fa";
 
 function MobileSectionHeading({ label }: { label: string }) {
