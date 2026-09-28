@@ -17,6 +17,23 @@ html, body {
   overflow: hidden;
 }
 
+.link-highlight {
+  border-radius: 0.2rem;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  transition:
+    color 150ms ease,
+    background-color 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.link-highlight:hover,
+.link-highlight:focus-visible {
+  color: #0f172a;
+  background-color: rgb(51 65 85 / 0.1);
+  box-shadow: 0 0 0 0.2rem rgb(51 65 85 / 0.1);
+}
+
 @media (min-width: 64rem) {
   .project-list:has(.project-card:hover) .project-card {
     opacity: 0.5;

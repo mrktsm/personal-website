@@ -1,9 +1,55 @@
-import { useState, useEffect } from "react";
-import adobeExpressScreenshot from "./assets/codecafe-light.png";
+import { useState, useEffect, useRef } from "react";
+import adobeExpressScreenshot from "./assets/codecafe-clean-tight.png";
 import wikiracingDesktopScreenshot from "./assets/wikiracing-desktop.png";
-import wikiracingMobileScreenshot from "./assets/wikiracing-mobile.png";
-import drjavaImage from "./assets/drjava-light.png";
+import drjavaImage from "./assets/drjava-clean-tight.png";
 import { FaGithub, FaLinkedin, FaStar, FaYoutube } from "react-icons/fa";
+
+function MobileSectionHeading({ label }: { label: string }) {
+  const headingRef = useRef<HTMLDivElement>(null);
+  const [isStuck, setIsStuck] = useState(false);
+
+  useEffect(() => {
+    let animationFrame = 0;
+
+    const updateStickyState = () => {
+      cancelAnimationFrame(animationFrame);
+      animationFrame = requestAnimationFrame(() => {
+        const heading = headingRef.current;
+        const stuck =
+          window.innerWidth < 1024 &&
+          heading !== null &&
+          heading.getBoundingClientRect().top <= 0;
+
+        setIsStuck(stuck);
+      });
+    };
+
+    updateStickyState();
+    window.addEventListener("scroll", updateStickyState, { passive: true });
+    window.addEventListener("resize", updateStickyState);
+
+    return () => {
+      cancelAnimationFrame(animationFrame);
+      window.removeEventListener("scroll", updateStickyState);
+      window.removeEventListener("resize", updateStickyState);
+    };
+  }, []);
+
+  return (
+    <div
+      ref={headingRef}
+      className={`sticky top-0 z-20 mb-4 py-4 transition-[backdrop-filter] duration-200 motion-reduce:transition-none lg:sr-only ${
+        isStuck
+          ? "-mx-6 w-[calc(100%+3rem)] bg-transparent px-6 backdrop-blur-xl"
+          : "w-full bg-transparent px-0"
+      }`}
+    >
+      <h2 className="text-sm font-bold uppercase tracking-widest text-gray-800 lg:sr-only">
+        {label}
+      </h2>
+    </div>
+  );
+}
 
 function App() {
   const [activeSection, setActiveSection] = useState<string>("about");
@@ -144,7 +190,7 @@ function App() {
 
   return (
     <div
-      className={`mx-auto min-h-screen max-w-screen-xl font-sans text-black lg:flex lg:justify-between lg:gap-4 relative z-10 selection:bg-slate-300 selection:text-slate-900 transition-opacity duration-500 ease-in-out ${
+      className={`mx-auto min-h-screen max-w-screen-xl font-sans text-black lg:flex lg:justify-between lg:gap-4 relative z-10 selection:bg-slate-500/25 selection:text-slate-950 transition-opacity duration-500 ease-in-out ${
         isLoadingPage ? "opacity-0" : "opacity-100"
       }`}
     >
@@ -168,17 +214,17 @@ function App() {
               <li>
                 <a className="group flex items-center py-3" href="#about">
                   <span
-                    className={`nav-indicator mr-4 h-px transition-all group-hover:w-16 group-hover:bg-gray-800 group-focus-visible:w-16 group-focus-visible:bg-gray-800 motion-reduce:transition-none ${
+                    className={`nav-indicator mr-4 h-px transition-all group-hover:w-16 group-hover:bg-slate-950 group-focus-visible:w-16 group-focus-visible:bg-slate-950 motion-reduce:transition-none ${
                       activeSection === "about"
-                        ? "w-16 bg-gray-800"
-                        : "w-8 bg-gray-400"
+                        ? "w-16 bg-slate-950"
+                        : "w-8 bg-slate-500"
                     }`}
                   ></span>
                   <span
-                    className={`nav-text text-xs font-bold uppercase tracking-widest group-hover:text-gray-800 group-focus-visible:text-gray-800 ${
+                    className={`nav-text text-xs font-bold uppercase tracking-widest group-hover:text-slate-950 group-focus-visible:text-slate-950 ${
                       activeSection === "about"
-                        ? "text-gray-800"
-                        : "text-gray-500"
+                        ? "text-slate-950"
+                        : "text-slate-700"
                     }`}
                   >
                     About
@@ -188,17 +234,17 @@ function App() {
               <li>
                 <a className="group flex items-center py-3" href="#projects">
                   <span
-                    className={`nav-indicator mr-4 h-px transition-all group-hover:w-16 group-hover:bg-gray-800 group-focus-visible:w-16 group-focus-visible:bg-gray-800 motion-reduce:transition-none ${
+                    className={`nav-indicator mr-4 h-px transition-all group-hover:w-16 group-hover:bg-slate-950 group-focus-visible:w-16 group-focus-visible:bg-slate-950 motion-reduce:transition-none ${
                       activeSection === "projects"
-                        ? "w-16 bg-gray-800"
-                        : "w-8 bg-gray-400"
+                        ? "w-16 bg-slate-950"
+                        : "w-8 bg-slate-500"
                     }`}
                   ></span>
                   <span
-                    className={`nav-text text-xs font-bold uppercase tracking-widest group-hover:text-gray-800 group-focus-visible:text-gray-800 ${
+                    className={`nav-text text-xs font-bold uppercase tracking-widest group-hover:text-slate-950 group-focus-visible:text-slate-950 ${
                       activeSection === "projects"
-                        ? "text-gray-800"
-                        : "text-gray-500"
+                        ? "text-slate-950"
+                        : "text-slate-700"
                     }`}
                   >
                     Selected Work
@@ -212,17 +258,17 @@ function App() {
                   onClick={handleOpenSourceClick}
                 >
                   <span
-                    className={`nav-indicator mr-4 h-px transition-all group-hover:w-16 group-hover:bg-gray-800 group-focus-visible:w-16 group-focus-visible:bg-gray-800 motion-reduce:transition-none ${
+                    className={`nav-indicator mr-4 h-px transition-all group-hover:w-16 group-hover:bg-slate-950 group-focus-visible:w-16 group-focus-visible:bg-slate-950 motion-reduce:transition-none ${
                       activeSection === "opensource"
-                        ? "w-16 bg-gray-800"
-                        : "w-8 bg-gray-400"
+                        ? "w-16 bg-slate-950"
+                        : "w-8 bg-slate-500"
                     }`}
                   ></span>
                   <span
-                    className={`nav-text text-xs font-bold uppercase tracking-widest group-hover:text-gray-800 group-focus-visible:text-gray-800 ${
+                    className={`nav-text text-xs font-bold uppercase tracking-widest group-hover:text-slate-950 group-focus-visible:text-slate-950 ${
                       activeSection === "opensource"
-                        ? "text-gray-800"
-                        : "text-gray-500"
+                        ? "text-slate-950"
+                        : "text-slate-700"
                     }`}
                   >
                     Open Source
@@ -232,17 +278,17 @@ function App() {
               <li>
                 <a className="group flex items-center py-3" href="#experience">
                   <span
-                    className={`nav-indicator mr-4 h-px transition-all group-hover:w-16 group-hover:bg-gray-800 group-focus-visible:w-16 group-focus-visible:bg-gray-800 motion-reduce:transition-none ${
+                    className={`nav-indicator mr-4 h-px transition-all group-hover:w-16 group-hover:bg-slate-950 group-focus-visible:w-16 group-focus-visible:bg-slate-950 motion-reduce:transition-none ${
                       activeSection === "experience"
-                        ? "w-16 bg-gray-800"
-                        : "w-8 bg-gray-400"
+                        ? "w-16 bg-slate-950"
+                        : "w-8 bg-slate-500"
                     }`}
                   ></span>
                   <span
-                    className={`nav-text text-xs font-bold uppercase tracking-widest group-hover:text-gray-800 group-focus-visible:text-gray-800 ${
+                    className={`nav-text text-xs font-bold uppercase tracking-widest group-hover:text-slate-950 group-focus-visible:text-slate-950 ${
                       activeSection === "experience"
-                        ? "text-gray-800"
-                        : "text-gray-500"
+                        ? "text-slate-950"
+                        : "text-slate-700"
                     }`}
                   >
                     Experience
@@ -297,33 +343,25 @@ function App() {
           id="about"
           className="mb-16 scroll-mt-16 md:mb-20 lg:mb-24 lg:scroll-mt-24"
         >
-          <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-white/25 px-6 py-5 backdrop-blur-xl md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-            <h2 className="text-sm font-bold uppercase tracking-widest text-gray-800 lg:sr-only">
-              About
-            </h2>
-          </div>
+          <MobileSectionHeading label="About" />
           <p className="text-base font-medium text-gray-800">
-            I’m a Computer Science student at <a href="https://www.gettysburg.edu/" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">Gettysburg College</a>, graduating in December 2026. My work is mostly focused on backend engineering, full-stack development, and real-time systems.
+            I’m a Computer Science student at <a href="https://www.gettysburg.edu/" target="_blank" rel="noreferrer noopener" className="link-highlight font-semibold text-gray-900">Gettysburg College</a>, graduating in December 2026. My work is mostly focused on backend engineering, full-stack development, and real-time systems.
           </p>
           <p className="mt-4 text-base font-medium text-gray-800">
-            My current and largest project is <a href="https://wikiracing.org" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">wikiracing.org</a>, a real-time multiplayer platform where players race from one Wikipedia article to another using only in-page links. It has 5,000+ monthly users, 100,000+ monthly pageviews, and 110,000+ game starts. I built its Go WebSocket backend, matchmaking and party flows, verified-results pipeline, and ghost replay system.
+            My current and largest project is <a href="https://wikiracing.org" target="_blank" rel="noreferrer noopener" className="link-highlight font-semibold text-gray-900">wikiracing.org</a>, a real-time multiplayer platform where players race from one Wikipedia article to another using only in-page links. It has 5,000+ monthly users, 100,000+ monthly pageviews, and 110,000+ game starts. I built its Go WebSocket backend, matchmaking and party flows, verified-results pipeline, and ghost replay system.
           </p>
           <p className="mt-4 text-base font-medium text-gray-800">
-            I also built <a href="https://github.com/mrktsm/codecafe" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">CodeCafé</a>, a collaborative cloud IDE with 500+ GitHub stars. I wrote its Operational Transformation engine from scratch using Java, WebSockets, and Redis Lua scripts, enabling Google Docs-style simultaneous editing for code.
+            I also built <a href="https://github.com/mrktsm/codecafe" target="_blank" rel="noreferrer noopener" className="link-highlight font-semibold text-gray-900">CodeCafé</a>, a collaborative cloud IDE with 500+ GitHub stars. I wrote its Operational Transformation engine from scratch using Java, WebSockets, and Redis Lua scripts, enabling Google Docs-style simultaneous editing for code.
           </p>
           <p className="mt-4 text-base font-medium text-gray-800">
-            I’ve also contributed to <a href="https://github.com/apache/cassandra/commit/b26e33d50698f080f801983e34c883a82082b26d" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">Apache Cassandra</a> and worked as a Software Engineer at <a href="https://www.youtube.com/watch?v=K9llFoodPjI" target="_blank" rel="noreferrer noopener" className="font-semibold text-gray-900 hover:underline">Poozle</a>, where I built recommendation features on top of a vector database.
+            I’ve also contributed to <a href="https://github.com/apache/cassandra/commit/b26e33d50698f080f801983e34c883a82082b26d" target="_blank" rel="noreferrer noopener" className="link-highlight font-semibold text-gray-900">Apache Cassandra</a> and worked as a Software Engineer at <a href="https://www.youtube.com/watch?v=K9llFoodPjI" target="_blank" rel="noreferrer noopener" className="link-highlight font-semibold text-gray-900">Poozle</a>, where I built recommendation features on top of a vector database.
           </p>
         </section>
         <section
           id="projects"
           className="mb-16 scroll-mt-16 md:mb-20 lg:mb-24 lg:scroll-mt-24"
         >
-          <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-white/25 px-6 py-5 backdrop-blur-xl md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-            <h2 className="text-sm font-bold uppercase tracking-widest text-gray-800 lg:sr-only">
-              Selected Work
-            </h2>
-          </div>
+          <MobileSectionHeading label="Selected Work" />
           <div className="mt-4 project-list">
             <div className="project-card mb-12 group relative block pb-1 transition-all">
               <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-orange-50/30 lg:group-hover:shadow-[0_16px_44px_rgba(46,42,84,0.12)]"></div>
@@ -331,26 +369,16 @@ function App() {
               <div className="isolate sm:grid sm:grid-cols-8 sm:gap-8 md:gap-4">
                 <div className="mb-4 flex min-h-[7.5rem] items-center justify-start sm:mb-0 sm:order-2 sm:col-span-3 sm:justify-center">
                   <div
-                    className="relative w-44 overflow-visible transition"
-                    style={{ aspectRatio: "3/2" }}
+                    className="relative w-44 max-w-full transition"
+                    style={{ aspectRatio: "16/10" }}
                   >
                     <img
-                      alt="wikiracing.org desktop homepage screenshot"
-                      width="264"
-                      height="165"
+                      alt="wikiracing.org authenticated desktop dashboard"
+                      width="1440"
+                      height="900"
                       decoding="async"
                       src={wikiracingDesktopScreenshot}
-                      className="absolute left-0 top-3 w-[90%] rounded-[2px] object-contain shadow-sm"
-                      style={{ aspectRatio: "16/10" }}
-                    />
-                    <img
-                      alt="wikiracing.org mobile gameplay screenshot"
-                      width="117"
-                      height="211"
-                      decoding="async"
-                      src={wikiracingMobileScreenshot}
-                      className="absolute right-1 top-2 w-[34%] rounded-[2px] object-cover shadow-lg ring-1 ring-white/90"
-                      style={{ aspectRatio: "1179/2126" }}
+                      className="h-full w-full rounded-[2px] object-cover drop-shadow-[0_4px_8px_rgba(46,42,84,0.16)]"
                     />
                   </div>
                 </div>
@@ -443,10 +471,10 @@ function App() {
                 href="https://www.youtube.com/watch?v=OoThXai9ujM"
                 target="_blank"
                 rel="noreferrer noopener"
-                aria-label="Watch wikiracing.org gameplay (opens in new tab)"
-                className="inline-flex items-center font-medium leading-tight text-gray-800 group hover:text-slate-950 transition-colors duration-150 ease-in-out"
+                aria-label="Watch the wikiracing.org demo (opens in new tab)"
+                className="link-highlight inline-flex items-center font-medium leading-tight text-gray-800 group"
               >
-                Gameplay
+                Demo
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
@@ -467,16 +495,20 @@ function App() {
 
               <div className="isolate sm:grid sm:grid-cols-8 sm:gap-8 md:gap-4">
                 <div className="mb-4 flex min-h-[7.5rem] items-center justify-start sm:mb-0 sm:order-2 sm:col-span-3 sm:justify-center">
-                  <img
-                    alt="Adobe Express project screenshot or logo"
-                    width="300"
-                    height="200"
-                    decoding="async"
-                    src={adobeExpressScreenshot}
-                    onLoad={() => setIsCodeCafeImageLoaded(true)}
-                    className="rounded w-48 max-w-full transition object-contain"
-                    style={{ aspectRatio: "3/2" }}
-                  />
+                  <div
+                    className="w-48 max-w-full rounded-[4px]"
+                    style={{ aspectRatio: "1601/864" }}
+                  >
+                    <img
+                      alt="CodeCafé collaborative IDE screenshot"
+                      width="1601"
+                      height="864"
+                      decoding="async"
+                      src={adobeExpressScreenshot}
+                      onLoad={() => setIsCodeCafeImageLoaded(true)}
+                      className="h-full w-full object-contain drop-shadow-[0_4px_8px_rgba(46,42,84,0.16)] transition"
+                    />
+                  </div>
                 </div>
                 <div className="sm:col-span-5">
                   <h3 className="text-lg font-medium text-gray-800 group-hover:text-slate-950">
@@ -571,10 +603,10 @@ function App() {
                 href="https://youtu.be/NRYpmEbF7lk?si=-tXQmBVewPyVX12k"
                 target="_blank"
                 rel="noreferrer noopener"
-                aria-label="How the CodeCafé Operational Transformation engine works (opens in new tab)"
-                className="inline-flex items-center font-medium leading-tight text-gray-800 group hover:text-slate-950 transition-colors duration-150 ease-in-out"
+                aria-label="CodeCafé technical deep dive (opens in new tab)"
+                className="link-highlight inline-flex items-center font-medium leading-tight text-gray-800 group"
               >
-                How the OT Engine Works
+                CodeCafé Technical Deep Dive
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
@@ -666,7 +698,7 @@ function App() {
           </div>
           <div className="mt-12">
             <a
-              className="inline-flex items-center font-medium leading-tight text-gray-800 group hover:text-slate-950"
+              className="link-highlight inline-flex items-center font-medium leading-tight text-gray-800 group"
               href="https://github.com/mrktsm"
               target="_blank"
               rel="noreferrer noopener"
@@ -693,11 +725,7 @@ function App() {
           id="opensource"
           className="mb-16 scroll-mt-16 md:mb-20 lg:mb-24 lg:scroll-mt-24"
         >
-          <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-white/25 px-6 py-5 backdrop-blur-xl md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-            <h2 className="text-sm font-bold uppercase tracking-widest text-gray-800 lg:sr-only">
-              Open Source
-            </h2>
-          </div>
+          <MobileSectionHeading label="Open Source" />
           <div className="mt-4 group/list">
             <div className="mb-12 group relative block pb-1 transition-all lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
               <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-orange-50/30 lg:group-hover:shadow-[0_16px_44px_rgba(46,42,84,0.12)]"></div>
@@ -771,11 +799,7 @@ function App() {
           id="experience"
           className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
         >
-          <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-white/25 px-6 py-5 backdrop-blur-xl md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-            <h2 className="text-sm font-bold uppercase tracking-widest text-gray-800 lg:sr-only">
-              Experience
-            </h2>
-          </div>
+          <MobileSectionHeading label="Experience" />
           <div className="mt-4 group/list">
             <div className="mb-12 group relative block pb-1 transition-all lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
               <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-orange-50/30 lg:group-hover:shadow-[0_16px_44px_rgba(46,42,84,0.12)]"></div>
@@ -855,15 +879,19 @@ function App() {
 
               <div className="isolate sm:grid sm:grid-cols-8 sm:gap-8 md:gap-4">
                 <div className="mb-4 flex min-h-[7.5rem] items-center justify-start sm:mb-0 sm:order-2 sm:col-span-3 sm:justify-center lg:group-hover/list:opacity-100">
-                  <img
-                    alt="DrJava IDE development internship project"
-                    width="234"
-                    height="156"
-                    decoding="async"
-                    src={drjavaImage}
-                    className="rounded w-[9.75rem] transition object-contain"
-                    style={{ aspectRatio: "3/2" }}
-                  />
+                  <div
+                    className="w-44 max-w-full rounded-[4px]"
+                    style={{ aspectRatio: "1457/930" }}
+                  >
+                    <img
+                      alt="DrJava IDE development internship project"
+                      width="1457"
+                      height="930"
+                      decoding="async"
+                      src={drjavaImage}
+                      className="h-full w-full object-contain drop-shadow-[0_4px_8px_rgba(46,42,84,0.16)] transition"
+                    />
+                  </div>
                 </div>
                 <div className="sm:col-span-5">
                   <h3 className="text-lg font-medium text-gray-800 group-hover:text-slate-950">
@@ -1006,7 +1034,7 @@ function App() {
           </div>
           <div className="mt-8">
             <a
-              className="inline-flex items-center font-medium leading-tight text-gray-800 group hover:text-slate-950 transition-colors duration-150 ease-in-out"
+              className="link-highlight inline-flex items-center font-medium leading-tight text-gray-800 group"
               href="/Marko_Tsymbaliuk_Resume.pdf"
               target="_blank"
               rel="noreferrer noopener"

@@ -1,4 +1,16 @@
 {
+  "headers": [
+    {
+      "source": "/Marko_Tsymbaliuk_Resume.pdf",
+      "headers": [
+        { "key": "Content-Type", "value": "application/pdf" },
+        {
+          "key": "Content-Disposition",
+          "value": "inline; filename=\"Marko_Tsymbaliuk_Resume.pdf\""
+        }
+      ]
+    }
+  ],
   "redirects": [
     { "source": "/v/wikiracing", "destination": "https://www.youtube.com/watch?v=OoThXai9ujM", "permanent": false },
     { "source": "/v/codecafe", "destination": "https://youtu.be/NRYpmEbF7lk", "permanent": false },
