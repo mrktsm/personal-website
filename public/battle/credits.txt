@@ -1,0 +1,18 @@
+# Third-party notices
+
+This classroom adaptation uses the battle renderer from Pokémon Showdown Client by Guangcong Luo and contributors, pinned to ab4b77b8f3a5712e8fbe03ce106ef2b70a874fdb.
+https://github.com/smogon/pokemon-showdown-client
+
+The complete client is AGPLv3; battle engine files carry MIT notices, move animations carry CC0 notices, and CSS retains its upstream GPL notice. The overall adaptation is offered under AGPLv3 (see LICENSE). Original notices remain in vendor/renderer. jQuery 1.11.0 is MIT; the Caja sanitizer retains its Apache 2.0 notice.
+
+The two-species, 26-move metadata and English battle text were extracted from Pokémon Showdown server revision 7b02eb39878f4b486f658a752b38c161379bd352, MIT.
+https://github.com/smogon/pokemon-showdown
+
+Sprites, trainer sprites, backdrop, Pokémon cries, battle music and sprite dimensions were obtained from play.pokemonshowdown.com on 2026-10-19. Effect artwork, the client background and the client stylesheets (client.css, battle-log.css, sim-types.css) and battle-sound.ts are retained from the pinned client. Pokémon names, artwork and sprites belong to their respective rights holders, including Nintendo, Game Freak, and The Pokémon Company. Code licenses do not license those trademarks or artwork. This is an unofficial educational project, with no affiliation or endorsement.
+
+The question concepts draw on Software Engineering at Google, Chapter 13: Test Doubles, by Google, published by O’Reilly. The pizza scenarios and quiz wording are original adaptations.
+https://abseil.io/resources/swe-book/html/ch13.html
+
+No Battle Lab code is included. The quiz damage, scoring and timer are original classroom rules; this is not a competitive battle simulator.
+
+Source: https://github.com/mrktsm/test-doubles-battle

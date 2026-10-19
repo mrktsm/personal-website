@@ -1,0 +1,58 @@
+/* Showdown's client.css, battle.css and sim-types.css do the heavy lifting.
+   This file only sizes the room for a projector and adds the quiz pieces. */
+
+html, body { overflow: hidden; }
+.header .logo {
+	margin: 0; padding: 9px 0 0 14px; height: 41px;
+	font: bold 17px/1 Verdana, Helvetica, Arial, sans-serif; letter-spacing: -.3px;
+	color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,.6);
+}
+.header .logo span { display: block; margin-top: 3px; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #c8d6e8; }
+.userbar .button { font-size: 9pt; }
+.ps-room { top: 56px; }
+
+/* --scale is set from app.mjs so the 640×360 scene fills the space left of the log. */
+.battle-stage { position: absolute; top: 0; left: 0; bottom: 0; width: calc(640px * var(--scale, 1)); }
+#battle.battle { position: absolute; top: 0; left: 0; transform: scale(var(--scale, 1)); transform-origin: top left; border-top: 0; border-left: 0; }
+.ps-room .battle-controls {
+	top: calc(360px * var(--scale, 1) + 10px); bottom: 0; width: auto; left: 0; right: 0;
+	padding: 0 6px; overflow: auto; background: #EEF2F5;
+}
+.ps-room .battle-log { left: calc(640px * var(--scale, 1) + 1px); bottom: 0; }
+.paused-overlay {
+	position: absolute; top: 0; left: 0; width: 100%; height: calc(360px * var(--scale, 1));
+	display: flex; align-items: center; justify-content: center;
+	background: rgba(0,0,0,.55); color: #fff; font: bold 22pt Verdana, sans-serif; text-shadow: 0 2px 0 #000;
+}
+.paused-overlay[hidden] { display: none; }
+
+/* Controls: Showdown's whatdo / movemenu, with answers in place of PP. */
+.battle-controls .whatdo { font-size: 10pt; padding-top: 8px; }
+.battle-controls .whatdo small { margin-right: 4px; }
+.battle-controls .question { margin: 6px 0 4px; padding: 0 8px; font-size: 13pt; line-height: 1.35; color: #222; }
+.battle-controls .moveselect { float: none; padding-top: 4px; }
+.battle-controls .timerbutton { margin: 6px 4px 0 0; font-variant-numeric: tabular-nums; }
+.battle-controls .nextbutton { float: right; margin: 6px 8px 0 0; padding: 3px 14px; font-size: 11pt; }
+.movemenu { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin: 0; padding: 0 8px 0 4px; }
+.movemenu .movebutton {
+	float: none; width: auto; height: auto; min-height: 58px; margin: 0;
+	padding: 7px 10px 6px; text-align: left; font-size: 11pt; line-height: 1.25;
+}
+.movemenu .movebutton .answer { display: block; min-height: 2.5em; }
+.movemenu .movebutton small.type, .movemenu .movebutton small.pp { padding-top: 4px; font-size: 8pt; }
+.movemenu .movebutton.picked { outline: 3px solid #555; outline-offset: 1px; }
+.movemenu .movebutton.correct { outline: 3px solid #2e8b3e; outline-offset: 1px; }
+.movemenu .movebutton:disabled:not(.picked):not(.correct) { opacity: .55; }
+.battle-controls .button.big { margin: 10px 8px 0; padding: 8px 22px; font-size: 13pt; }
+.battle-controls .score { font-size: 28pt; font-weight: bold; color: #333; padding: 0 8px; margin: 6px 0; }
+.battle-controls .score small { font-size: 14pt; color: #777; }
+
+/* Battle log extras. */
+.battle-log .question-card { border-left: 4px solid #6a8cbb; }
+.battle-log .verdict-good { border-left: 4px solid #2e8b3e; }
+.battle-log .verdict-bad { border-left: 4px solid #bb2222; }
+
+@media (max-width: 900px) {
+	.ps-room .battle-log { display: none; }
+	.battle-stage { width: 100%; }
+}

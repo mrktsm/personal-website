@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><base href="/battle/"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Test Doubles Battle</title><link rel="icon" href="data:,"><link rel="stylesheet" href="vendor/style/client.css"><link rel="stylesheet" href="vendor/style/sim-types.css"><link rel="stylesheet" href="vendor/style/battle.css"><link rel="stylesheet" href="style.css"><script defer src="vendor/lib/jquery-1.11.0.min.js"></script><script defer src="vendor/lib/html-sanitizer-minified.js"></script><script defer src="vendor/renderer.js"></script><script defer src="app.js"></script></head>
+<body>
+<div id="header" class="header">
+  <h1 class="logo">Test Doubles <span>Battle</span></h1>
+  <div class="maintabbarbottom"></div>
+  <div class="userbar"><button id="pause" class="button" disabled>Pause</button> <button id="sound" class="button" aria-pressed="true">Sound on</button> <button id="restart" class="button">Restart</button> <a class="button" href="credits.txt" target="_blank" rel="noopener">Credits</a></div>
+</div>
+<div id="room" class="ps-room ps-room-light">
+  <div id="stage" class="battle-stage">
+    <div id="battle" class="battle" aria-label="Charizard battling Gengar"></div>
+    <div id="paused-overlay" class="paused-overlay" hidden>Paused</div>
+    <div id="controls" class="battle-controls" role="complementary" aria-label="Battle controls" aria-live="polite"></div>
+  </div>
+  <div id="battle-log" class="battle-log"></div>
+</div>
+</body></html>
