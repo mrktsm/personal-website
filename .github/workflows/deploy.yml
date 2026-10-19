@@ -1,0 +1,56 @@
+name: Deploy personal website
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-personal-website
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+      - name: Build production website
+        run: |
+          npm ci
+          npm run build
+      - name: Set up deployment SSH
+        env:
+          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+          VPS_HOST: ${{ vars.VPS_HOST }}
+          VPS_SSH_HOST_KEY: ${{ vars.VPS_SSH_HOST_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "$VPS_SSH_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          test -n "$VPS_SSH_HOST_KEY"
+          printf '%s %s\n' "$VPS_HOST" "$VPS_SSH_HOST_KEY" > ~/.ssh/known_hosts
+      - name: Publish website
+        env:
+          VPS_HOST: ${{ vars.VPS_HOST }}
+          VPS_USER: ${{ vars.VPS_USER }}
+        run: |
+          release_id="${GITHUB_SHA}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          remote_dir="portfolio/releases/$release_id"
+          ssh "$VPS_USER@$VPS_HOST" "mkdir -p ~/$remote_dir ~/portfolio/deploy"
+          rsync -az dist/ "$VPS_USER@$VPS_HOST:~/$remote_dir/"
+          scp deploy/Caddyfile "$VPS_USER@$VPS_HOST:~/$remote_dir.Caddyfile.next"
+          scp deploy/publish.sh "$VPS_USER@$VPS_HOST:~/portfolio/deploy/publish.sh"
+          ssh "$VPS_USER@$VPS_HOST" "sh ~/portfolio/deploy/publish.sh ~/$remote_dir '$release_id' ~/$remote_dir.Caddyfile.next"
+      - name: Check public website
+        run: |
+          curl --fail --silent --show-error --retry 3 https://markotsymbaluk.com/ | grep -q 'id="root"'
+          curl --fail --silent --show-error https://markotsymbaluk.com/battle/ | grep -q '<base href="/battle/"'
+          curl --fail --silent --show-error --head https://markotsymbaluk.com/Marko_Tsymbaliuk_Resume.pdf | grep -qi '^content-type: application/pdf'
+          curl --fail --silent --show-error --head https://www.markotsymbaluk.com/ | grep -qi '^location: https://markotsymbaluk.com/'

@@ -1,0 +1,32 @@
+(personal_website) {
+	encode zstd gzip
+	root * /data/portfolio/current
+	header X-Content-Type-Options nosniff
+	header Strict-Transport-Security "max-age=63072000"
+	redir /v/wikiracing https://www.youtube.com/watch?v=OoThXai9ujM 302
+	redir /v/codecafe https://youtu.be/NRYpmEbF7lk 302
+	redir /v/mcp-tutor https://youtu.be/4BScIcCiIsk 302
+	redir /v/integrity https://youtu.be/10rLBWy_s7U 302
+	@resume path /Marko_Tsymbaliuk_Resume.pdf
+	header @resume Content-Disposition `inline; filename="Marko_Tsymbaliuk_Resume.pdf"`
+	handle /_vercel/insights/* {
+		respond "" 204
+	}
+	handle /assets/* {
+		root * /data/portfolio
+		header Cache-Control "public, max-age=31536000, immutable"
+		file_server
+	}
+	handle {
+		header Cache-Control "no-cache"
+		file_server
+	}
+}
+
+markotsymbaluk.com {
+	import personal_website
+}
+
+www.markotsymbaluk.com {
+	redir https://markotsymbaluk.com{uri} permanent
+}
