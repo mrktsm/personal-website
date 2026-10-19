@@ -18,6 +18,7 @@
     { "source": "/v/integrity", "destination": "https://youtu.be/10rLBWy_s7U", "permanent": false }
   ],
   "rewrites": [
-    { "source": "/battle", "destination": "/battle/index.html" }
+    { "source": "/battle", "destination": "/battle/index.html" },
+    { "source": "/battle/", "destination": "/battle/index.html" }
   ]
 }
