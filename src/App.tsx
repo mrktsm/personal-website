@@ -57,7 +57,7 @@ function App() {
   const [codeCafeStars, setCodeCafeStars] = useState<string | number>("200+");
   const [areStarsFetched, setAreStarsFetched] = useState<boolean>(false);
   const [wikiRacingGames, setWikiRacingGames] = useState<string | number>(
-    "110,000+",
+    "400,000+",
   );
   const [areGamesFetched, setAreGamesFetched] = useState<boolean>(false);
   const [hasRevealTimedOut, setHasRevealTimedOut] = useState<boolean>(false);
@@ -352,7 +352,7 @@ function App() {
             I’m a Computer Science student at <a href="https://www.gettysburg.edu/" target="_blank" rel="noreferrer noopener" className="link-highlight font-semibold text-gray-900">Gettysburg College</a>, graduating in December 2026. My work is mostly focused on backend engineering, full-stack development, and real-time systems.
           </p>
           <p className="mt-4 text-base font-medium text-gray-800">
-            My current and largest project is <a href="https://wikiracing.org" target="_blank" rel="noreferrer noopener" className="link-highlight font-semibold text-gray-900">wikiracing.org</a>, a real-time multiplayer platform where players race from one Wikipedia article to another using only in-page links. It has 20,000+ monthly users, 340,000+ monthly pageviews, and 300,000+ races played. I built its Go WebSocket backend, matchmaking and party flows, verified-results pipeline, and ghost replay system.
+            My current and largest project is <a href="https://wikiracing.org" target="_blank" rel="noreferrer noopener" className="link-highlight font-semibold text-gray-900">wikiracing.org</a>, a real-time multiplayer platform where players race from one Wikipedia article to another using only in-page links. It has 5,000+ registered accounts and 400,000+ race starts. I built its Go WebSocket backend, matchmaking and party flows, verified-results pipeline, and ghost replay system.
           </p>
           <p className="mt-4 text-base font-medium text-gray-800">
             I also built <a href="https://github.com/mrktsm/codecafe" target="_blank" rel="noreferrer noopener" className="link-highlight font-semibold text-gray-900">CodeCafé</a>, a collaborative cloud IDE with 500+ GitHub stars. I wrote its Operational Transformation engine from scratch using Java, WebSockets, and Redis Lua scripts, enabling Google Docs-style simultaneous editing for code.
@@ -373,11 +373,11 @@ function App() {
               <div className="isolate sm:grid sm:grid-cols-8 sm:gap-8 md:gap-4">
                 <div className="mb-4 flex min-h-[7.5rem] items-center justify-start sm:mb-0 sm:order-2 sm:col-span-3 sm:justify-center">
                   <div
-                    className="relative w-44 max-w-full transition"
+                    className="relative w-[9.75rem] max-w-full transition"
                     style={{ aspectRatio: "16/10" }}
                   >
                     <img
-                      alt="wikiracing.org authenticated desktop dashboard"
+                      alt="wikiracing.org homepage with the Ferris wheel daily challenge"
                       width="1440"
                       height="900"
                       decoding="async"
@@ -760,7 +760,7 @@ function App() {
                     </a>
                   </h3>
                   <p className="mt-1 text-sm font-medium text-gray-600">
-                    Open Source Contributor · Jan 2025 - Present
+                    Open Source Contributor · Aug 2025 - Present
                   </p>
 
                   <p className="mt-2 text-sm font-medium text-gray-800 select-none">
@@ -883,7 +883,7 @@ function App() {
               <div className="isolate sm:grid sm:grid-cols-8 sm:gap-8 md:gap-4">
                 <div className="mb-4 flex min-h-[7.5rem] items-center justify-start sm:mb-0 sm:order-2 sm:col-span-3 sm:justify-center lg:group-hover/list:opacity-100">
                   <div
-                    className="w-44 max-w-full rounded-[4px]"
+                    className="w-[9.75rem] max-w-full rounded-[4px]"
                     style={{ aspectRatio: "1457/930" }}
                   >
                     <img
