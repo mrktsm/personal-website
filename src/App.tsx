@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import adobeExpressScreenshot from "./assets/codecafe-clean-tight.webp";
 import wikiracingDesktopScreenshot from "./assets/wikiracing-desktop.webp";
+import wikiracingMobileScreenshot from "./assets/wikiracing-mobile.webp";
 import drjavaImage from "./assets/drjava-clean-tight.webp";
 import { FaGithub, FaLinkedin, FaStar, FaYoutube } from "react-icons/fa";
 
@@ -373,16 +374,26 @@ function App() {
               <div className="isolate sm:grid sm:grid-cols-8 sm:gap-8 md:gap-4">
                 <div className="mb-4 flex min-h-[7.5rem] items-center justify-start sm:mb-0 sm:order-2 sm:col-span-3 sm:justify-center">
                   <div
-                    className="relative w-[9.75rem] max-w-full transition"
-                    style={{ aspectRatio: "16/10" }}
+                    className="relative w-44 overflow-visible transition"
+                    style={{ aspectRatio: "3/2" }}
                   >
                     <img
                       alt="wikiracing.org homepage with the Ferris wheel daily challenge"
-                      width="1440"
-                      height="900"
+                      width="264"
+                      height="165"
                       decoding="async"
                       src={wikiracingDesktopScreenshot}
-                      className="h-full w-full rounded-[2px] object-cover drop-shadow-[0_4px_8px_rgba(46,42,84,0.16)]"
+                      className="absolute left-0 top-3 w-[90%] rounded-[2px] object-contain shadow-sm"
+                      style={{ aspectRatio: "16/10" }}
+                    />
+                    <img
+                      alt="wikiracing.org race on a phone"
+                      width="117"
+                      height="211"
+                      decoding="async"
+                      src={wikiracingMobileScreenshot}
+                      className="absolute right-1 top-2 w-[34%] rounded-[2px] object-cover shadow-[-3px_3px_10px_rgba(20,18,40,0.3)]"
+                      style={{ aspectRatio: "1179/2126" }}
                     />
                   </div>
                 </div>
